@@ -245,20 +245,23 @@ func (s *server) RegisterRoutes(server *web.Server) {
 
 	api := group.Group("/api", middleware.CSRF())
 	api.POST("/auth/login", s.Login)
-	api.POST("/auth/logout", s.Logout, s.requireLogin)
+	api.POST("/auth/logout", s.Logout)
 	api.GET("/me", s.CurrentUser, s.requireLogin)
 
 	page := group.Group("", middleware.CSRFWithConfig(middleware.CSRFConfig{
 		TokenLookup: "form:csrf",
 	}))
 	page.GET("/login", webui.Template.Handler, s.redirectToNext)
+	page.GET("/logout", s.ClientLogout)
 	page.GET("/authorize", s.Authorize(webui.Template.Handler), s.redirectToLogin)
 	page.POST("/authorize", s.Authorize(webui.Template.Handler), s.redirectToLogin)
 
 	if s.config.Mount != "" && s.config.Mount != "/" {
-		group.GET("", webui.Template.Handler, middleware.CSRF())
+		group.GET("", webui.Template.Handler, s.redirectToLogin)
+	} else {
+		server.GET(s.config.Mount, webui.Template.Handler, s.redirectToLogin)
 	}
-	group.GET("/*", webui.Template.Handler, middleware.CSRF())
+	group.GET("/*", webui.Template.Handler, s.redirectToLogin)
 
 	// No CSRF here:
 	group.GET("/code", webui.Template.Handler)
