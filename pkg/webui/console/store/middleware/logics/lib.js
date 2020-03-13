@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import { createLogic } from 'redux-logic'
-import * as user from '../../actions/user'
 import { isUnauthenticatedError } from '../../../../lib/errors/utils'
 import { error } from '../../../../lib/log'
 
@@ -77,8 +76,9 @@ const createRequestLogic = function(
         error(e) // Log the error if in development mode
 
         if (isUnauthenticatedError(e)) {
-          // If there was an unauthenticated error, log the user out
-          dispatch(user.logoutSuccess())
+          // If there was an unauthenticated error, the access token is not
+          // valid. Reloading will then initiate the auth flow.
+          window.location.reload()
         } else {
           // Otherweise, dispatch the fail action
           dispatch(failAction(e))
