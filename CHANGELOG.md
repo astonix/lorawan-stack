@@ -12,6 +12,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - CLI can now dump JSON encoded `grpc_payload` field for unary requests (see `--dump-requests` flag).
 - Template ID column in the webhook table in the Console.
 - Select all field mask paths in CLI get, list and search commands (see `--all` option).
+- Console logout is now propagated to the OAuth provider.
+  - This requires a database migration (`ttn-lw-stack is-db migrate`) because of the added columns.
+  - To set the `logout-redirect-uris` for existing clients, the CLI client can be used, e.g.: `ttn-lw-cli clients update console --redirect-uris "https://localhost:1885/console" --redirect-uris "http://localhost:1885/console"`.
+
 
 ### Changed
 
