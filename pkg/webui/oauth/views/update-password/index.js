@@ -209,7 +209,7 @@ export default class UpdatePassword extends React.PureComponent {
                 onChange={this.handleRevokeAllAccess}
                 warning={revoke_all_access ? m.revokeWarning : undefined}
                 name="revoke_all_access"
-                label={m.revokeAllAccess}
+                title={m.revokeAllAccess}
                 component={Checkbox}
               />
               <Form.Submit component={SubmitButton} message={sharedMessages.changePassword} />
