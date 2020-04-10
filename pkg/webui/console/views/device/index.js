@@ -28,6 +28,7 @@ import NotFoundRoute from '../../../lib/components/not-found-route'
 
 import DeviceOverview from '../device-overview'
 import DeviceData from '../device-data'
+import DeviceMessages from '../device-messages'
 import DeviceGeneralSettings from '../device-general-settings'
 import DeviceLocation from '../device-location'
 import DevicePayloadFormatters from '../device-payload-formatters'
@@ -42,7 +43,11 @@ import {
 } from '../../store/selectors/devices'
 import { selectJsConfig, selectAsConfig } from '../../../lib/selectors/env'
 
-import { mayReadApplicationDeviceKeys } from '../../lib/feature-checks'
+import {
+  mayReadApplicationDeviceKeys,
+  mayScheduleDownlinks,
+  checkFromState,
+} from '../../lib/feature-checks'
 import PropTypes from '../../../lib/prop-types'
 import getHostnameFromUrl from '../../../lib/host-from-url'
 
@@ -58,9 +63,8 @@ import style from './device.styl'
       devId,
       appId,
       device,
-      mayReadKeys: mayReadApplicationDeviceKeys.check(
-        mayReadApplicationDeviceKeys.rightsSelector(state),
-      ),
+      mayReadKeys: checkFromState(mayReadApplicationDeviceKeys, state),
+      mayScheduleDownlinks: checkFromState(mayScheduleDownlinks, state),
       fetching: selectDeviceFetching(state),
       error: selectDeviceError(state),
     }
@@ -122,6 +126,7 @@ export default class Device extends React.Component {
     env: PropTypes.env,
     location: PropTypes.location.isRequired,
     match: PropTypes.match.isRequired,
+    mayScheduleDownlinks: PropTypes.bool.isRequired,
     stopStream: PropTypes.func.isRequired,
   }
 
@@ -151,6 +156,7 @@ export default class Device extends React.Component {
         application_server_address,
       },
       env: { siteName },
+      mayScheduleDownlinks,
     } = this.props
 
     const jsConfig = selectJsConfig()
@@ -173,19 +179,25 @@ export default class Device extends React.Component {
     const tabs = [
       { title: sharedMessages.overview, name: 'overview', link: basePath },
       { title: sharedMessages.data, name: 'data', link: `${basePath}/data` },
+      {
+        title: sharedMessages.messages,
+        name: 'messages',
+        link: `${basePath}/messages`,
+        hidden: !mayScheduleDownlinks,
+      },
       { title: sharedMessages.location, name: 'location', link: `${basePath}/location` },
       {
         title: sharedMessages.payloadFormatters,
         name: 'develop',
         link: payloadFormattersLink,
         exact: false,
-        disabled: !hasAs,
+        hidden: !hasAs,
       },
       {
         title: sharedMessages.claiming,
         name: 'claim-auth-code',
         link: `${basePath}/claim-auth-code`,
-        disabled: !hasJs,
+        hidden: !hasJs,
       },
       {
         title: sharedMessages.generalSettings,
@@ -204,6 +216,7 @@ export default class Device extends React.Component {
         <Switch>
           <Route exact path={basePath} component={DeviceOverview} />
           <Route exact path={`${basePath}/data`} component={DeviceData} />
+          <Route exact path={`${basePath}/messages`} component={DeviceMessages} />
           <Route exact path={`${basePath}/location`} component={DeviceLocation} />
           <Route exact path={`${basePath}/general-settings`} component={DeviceGeneralSettings} />
           {hasAs && (
