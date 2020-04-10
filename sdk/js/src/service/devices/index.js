@@ -15,6 +15,7 @@
 /* eslint-disable no-invalid-this, no-await-in-loop */
 
 import traverse from 'traverse'
+import DownlinkQueue from '../downlink-queue'
 import Marshaler from '../../util/marshaler'
 import combineStreams from '../../util/combine-streams'
 import { notify, EVENTS } from '../../api/stream/shared'
@@ -34,6 +35,8 @@ class Devices {
     }
     this._api = api
     this._stackConfig = stackConfig
+
+    this.DownlinkQueue = new DownlinkQueue(api.AppAs, { stackConfig })
   }
 
   _emitDefaults(paths, device) {
