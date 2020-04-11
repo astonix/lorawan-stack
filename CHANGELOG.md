@@ -45,6 +45,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - DeviceModeInd handling for LoRaWAN 1.1 devices.
 - Do not perform unnecessary gateway location updates.
 - Error display on failed end device import in the Console.
+- Application Server does not crash when retrieving a webhook template that does not exist if no template repository has been configured.
+- Application Server does not crash when listing webhook templates if no template repository has been configured.
 
 ### Security
 
