@@ -4,7 +4,20 @@ description: ""
 weight: 3
 ---
 
-{{% tts %}} can be started for development without passing any configuration. However, there are a number of things you need to configure for a production deployment. In this guide we'll set environment variables in the `docker-compose.yml` file to configure {{% tts %}} as a private deployment on `thethings.example.com`.
+{{% tts %}} can be started for development without passing any configuration. However, there are a number of things you need to configure for a production deployment. In this guide we will configure {{% tts %}} as a private deployment on `thethings.example.com`. For that purpose, we are going to need two configuration files: `docker-compose.yml`, which defines the Docker services of {{% tts %}} and its dependencies, and `ttn-lw-stack.yml`, which contains configuration specific to our {{% tts %}} deployment.
+
+This guide assumes the following hierarchy:
+
+```
+docker-compose.yml          defines Docker services for running {{% tts %}}
+config/
+└── stack/
+    └── ttn-lw-stack.yml    configuration file for {{% tts %}}
+```
+
+You can find the example [docker-compose.yml]({{% repo-file-url "raw" "docker-compose.yml" %}}) and [ttn-lw-stack.yml]({{% repo-file-url "raw" "config/stack/ttn-lw-stack.yml" %}}) files [in the Github repository of {{% tts %}}]({{% repo %}}).
+
+We will discuss configuring these files for a production deployment on `thethings.example.com`.
 
 ## Databases
 
@@ -23,7 +36,7 @@ cockroach:
 
 Read the CockroachDB documentation for setting up a highly available cluster.
 
-We also need to configure [Redis](https://redis.io/), in this guide we'll use a single instance of Redis. Just as with the SQL database, find a recent tag of the [redis image on Docker Hub](https://hub.docker.com/_/redis?tab=tags) and update it in the `docker-compose.yml` file. Again, make sure that the `volumes` are set up correctly so that the datastore is persisted on your server's disk.
+We also need to configure [Redis](https://redis.io/). In this guide we'll use a single instance of Redis. Just as with the SQL database, find a recent tag of the [redis image on Docker Hub](https://hub.docker.com/_/redis?tab=tags) and update it in the `docker-compose.yml` file. Again, make sure that the `volumes` are set up correctly so that the datastore is persisted on your server's disk. Note that {{% tts %}} requires Redis version 5.0 or newer.
 
 The simplest configuration for Redis will look like this:
 
@@ -40,11 +53,15 @@ Read the Redis documentation for setting up a highly available cluster.
 
 ## {{% tts %}}
 
-Before we go into the details of {{% tts %}}'s configuration, we'll take a look at the basics. Below you see part the configuration of the `stack` service in the `docker-compose.yml` file. As with the databases, you need to find a recent tag of the [thethingsnetwork/lorawan-stack image on Docker Hub](https://hub.docker.com/r/thethingsnetwork/lorawan-stack/tags) and update the `docker-compose.yml` file with that. We tell Docker Compose to start the container with `ttn-lw-stack start`, we indicate that it depends on CockroachDB and Redis, and we configure a volume for storing blobs (such as profile pictures).
+Before we go into the details of {{% tts %}}'s configuration, we'll take a look at the basics. Below you see part the configuration of the `stack` service in the `docker-compose.yml` file. As with the databases, you need to find a recent tag of the [thethingsnetwork/lorawan-stack image on Docker Hub](https://hub.docker.com/r/thethingsnetwork/lorawan-stack/tags) and update the `docker-compose.yml` file with that. We tell Docker Compose to start the container with `ttn-lw-stack -c /config/ttn-lw-stack.yml start` and we indicate that it depends on CockroachDB and Redis.
+
+Under the `volumes` section, we define volumes for files that need to be persisted on disk. There are stored blob files (such as profile pictures) and certificate files retrieved with ACME (if required). We also mount the local `./config/stack/` directory on the container under `/config`, so that {{% tts %}} can find our configuration file at `/config/ttn-lw-stack.yml`.
+
+> NOTE: If your `ttn-lw-stack.yml` is in a directory other than `./config/stack`, you will need to change this volume accordingly.
 
 The `ports` section exposes {{% tts %}}'s ports to the world. Port `80` and `443` are mapped to the internal HTTP and HTTPS ports. The other ports have a direct mapping. If you don't need support for gateways and applications that don't support TLS, you can remove ports starting with `188`.
 
-In the `environment` section, we configure the databases used by the stack. We will set these to the CockroachDB and Redis instances that are defined in the `docker-compose.yml` above.
+In the `environment` section, we configure the databases used by {{% tts %}}. We will set these to the CockroachDB and Redis instances that are defined in the `docker-compose.yml` above.
 
 ```yaml
 stack:
@@ -92,23 +109,23 @@ stack:
 #     file: ./key.pem
 ```
 
-Next, we'll have a look at the configuration options for your private deployment. We'll set these options in the `ttn-lw-stack.yml` file that is mounted as a volume on the `stack` service in `docker-compose.yml`.
+Next, we'll have a look at the configuration options for your private deployment. We'll set these options in the `ttn-lw-stack.yml` file.
 
 First is TLS with Let's Encrypt. Since we're deploying {{% tts %}} on
 `thethings.example.com`, we configure it to only request certificates for that
-host, and also to use it as the default host.
+host, and also to use it as the default host (see the `tls` section).
 
 We also configure HTTP server keys for encrypting and verifying cookies, as well
-as passwords for endpoints that you may want to keep for internal use.
+as passwords for endpoints that you may want to keep for internal use (see the `http` section).
 
 {{% tts %}} sends emails to users, so we need to configure how these are sent.
 You can use Sendgrid or an SMTP server. If you skip setting up an email provider,
-{{% tts %}} will print emails to the stack logs.
+{{% tts %}} will print emails to the stack logs (see the `email` section).
 
 Finally, we also need to configure the URLs for the Web UI and the secret used
-by the console client.
+by the console client (see the `console` section).
 
-For more detailed configuration, refer to [the relevant documentation]({{< ref "/reference/configuration" >}})
+For more detailed configuration, refer to [the relevant documentation]({{< ref "/reference/configuration" >}}).
 
 Below is an example `ttn-lw-stack.yml` file:
 
@@ -198,4 +215,4 @@ console:
     client-secret: 'console'          # choose or generate a secret (*)
 ```
 
-(*) You will need the `console.oauth.client-secret` again in a later step.
+>NOTE: Make note of the client secret, as it will be needed again when initialing {{% tts %}}.
