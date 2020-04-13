@@ -117,6 +117,12 @@ rules:
   no-console:
     - warn
 
+  # Enforce capitalized comments
+  capitalized-comments:
+    - error
+    - always
+    - ignoreConsecutiveComments: true
+
   # Warn on missing JsDoc definitions
   valid-jsdoc:
     - warn
