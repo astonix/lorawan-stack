@@ -379,6 +379,177 @@ Comments can also be used to indicate steps to take in the future (*TODOs*). Suc
 
 In our API definitions (`.proto` files) we'd like to see short comments on every service, method, message and field. Code that is generated from these files does not have to comply with guidelines (such as Go's guideline for starting the comment with the name of the thing that is commented on).
 
+## JavaScript (Frontend) Code Style
+
+For our frontend development, we use JavaScript ES6, which is either transpiled by `webpack` to be run in the browser, or used natively by Node.JS in our build pipeline.
+
+### Code Formatting
+
+We use `prettier` and `eslint` to conform our code to our guidelines as far as possible. Commited code that violates these rules will cause a CI failure. For your convenience, it is hence recommended to set up your development environment to apply autoformatting on every save. We usually don't enforce any formatting or styles that go beyond of what we can ensure using our linting setup. You can check the respective configuration in `/config/eslintrc.yaml`, `/config/.prettierrc.yaml` as well as the global `.editorconfig`.
+
+### Code Comments
+
+Additionally to the overall code comment rules outline above, we use [JSDoc](https://jsdoc.app) conform documentation of classes and functions. We also use full english sentences and ending sentence periods here.
+
+Please make sure that these multi-line comments follow the correct format, especially leaving the first line of this multiline JSDoc comments empty:
+
+```js
+// Bad.
+
+/** Converts a byte string from hex to base64.
+ * @param {string} bytes - The bytes, represented as hex string.
+ * @returns {string} The bytes, represented as base64 string.
+ */
+
+// Good.
+
+/**
+ * Converts a byte string from hex to base64.
+ * @param {string} bytes - The bytes, represented as hex string.
+ * @returns {string} The bytes, represented as base64 string.
+ */
+```
+
+It also makes sense to wrap code bits, variable names and URLs in \`\`  quotes, so they can easily be recognized and do not clash with our capitalization rules enforced by eslint, when they are at the beginning of a sentence:
+
+```js
+// Bad. This will get flagged by the linter.
+
+// devAddr is a hex string.
+const devAddr = '270000FF'
+
+// Good.
+
+// `devAddr` is a hex string.
+const devAddr = '270000FF'
+```
+
+### Import Statement Order
+
+Our `import` statements use the following order, separated by emty newlines:
+
+1. Node "builtin" modules (e.g. `path`)
+2. External modules (e.g. `react`)
+3. Well-known modules (e.g. `../../../components/*`)
+  1. Constants modules 
+  2. API module
+  3. Presentational components (local and global)
+  4. Container components (local and global)
+  5. View components
+  6. Utility components
+  7. Utility modules
+  8. Store modules
+  9. Global assets and styles
+4. Other parent modules (e.g. `../../../module`)
+5. Other sibling modules (e.g. `./validation-schema`, `./button.styl`)
+6. Index of the current directory (`./`)
+
+Note that this order is enforced by our linter and will cause a CI fail when not respected. Again, settting up your development environment to integrate linting will assist you greatly here.
+
+### React Component Syntax (Functional, Class Components and Hooks)
+
+We currently do not enforce a ruleset that enforces a specific component type. Lately, we have been embracing React Hooks and write a lot of new components using this approach. We use conventional class components mostly to make use of class decorators, which we have been using from the very start. Likewise, there are a lot of class components from the time before React Hooks.
+
+- Functional components should be considered:
+  - To make use of React's Hook API
+  - For plain (dumb) presentational components
+  - For components that don't need to be decorated (`@decorator`)
+- Class components should be considered:
+  - For components that need to be decorated (`@decorator`), (e.g. views or container components)
+  - For stateful components, in case you prefer the class syntax (though we encourage you to use the hook approach)
+
+### React Component Types
+
+We differentiate four different component scopes:
+- Presentational Components (global and application level)
+- Container Components (global and application level)
+- View Components
+- Utility Components (global and application level)
+
+The differentiation is not always 100% clear and we tend to now be too dogmatic about it. Additionally, the introduction of react hooks tends too break up these traditional categorizations even more and might necessitate a review of these in the near future.
+
+Generally we understand these component types as follows:
+
+#### Presentational Components
+
+These are UI elements that primarily serve a presentational purpose. They render basic or composite control elements that will make up the visual interface. They never connect to the store or perform any data fetching or have any other side effects and render rich DOM trees which are also styled according to our design guidelines.
+
+Examples for presentational components are simple UI elements such as buttons, input elements, navigations, breadcrumbs. We also regard our application specific forms as such components, as long as they don't connect to the store or perform the data fetching themselves.
+
+To decide whether a component is a presentational component, ask yourself:
+- Is this component more concerned with how things look, rather than how things work?
+- Does this component use no state?
+- Does this component not fetch or send data?
+- Does this component render a lot of (nested and styled) DOM nodes?
+- Is it a pure component? (Meaning same props will always yield the same output)
+
+If you answered more than 2 questions with yes, then you likely have a presentational component.
+
+Presentational components should always define storybook stories, to provide usage information for other developers.
+
+#### Container Components
+
+Container components focus more on state logic, data fetching, store management and similar concerns. They usually perform business logic and eventually render results using presentational components.
+
+An example for a container components are our table components, that manage the fetching and preparation of the respective entity and render the result using our `<Table />` component.
+
+To decide whether a component is a container component, ask yourself:
+- Is this component more concerned with how things work, rather than how things look?
+- Does this component connect to the store?
+- Does this component fetch or send data?
+- Is the component generated by higher order components (e.g. `withFeatureRequirement`)?
+- Does this component render simple nodes, like a single presentational component?
+
+If you can answer more than 2 questions with yes, then you likely have a container component.
+
+#### View components
+
+View components always represent a single view of the application, represented by a single route. They structurize the overall appearance of the page, obtain global state information, fetch necessary data and pass it down (implicitly via the store or explicitly as props) mostly to container components, but also to presentational components. Usually, these components also define submit and error hadnlers of the forms that they render. Otherwise, these components should not employ excessive (stateful) logic which should rather be handled by container components. It should focus on globally structurizing the page using the grid system and respective containers.
+
+##### View component checklist
+
+- Conciseness and no stateful logic (use containers instead)
+- Uses `<PageTitle />` component to define heading and page title
+- Uses breadcrumbs (if within breadcrumb view)
+- Fetching necessary data (via `withRequest` HOC), if not done by a container
+- Unavailable "catch-all"-routes are caught by `<NotFoundRoute />` component, including subviews
+- Errors should be caught by the `<ErrorView />` error boundary component
+- `withFeatureRequirement` HOC is used to prevent access to routes that the user has no rights for
+- Ensured responsiveness and usage of the grid system
+
+#### Utility components
+
+These components do not render any DOM elements and are hence not *visible* by themselves. Utility components can be higher order components or similar components, that modify their children or introduce a side effect to the render tree.
+
+To decide whether a component is a utility component ask yourself:
+- Is this component a higher order component?
+- Is this component invisible on its own?
+- Is this component an abstraction layer on top of another component?
+
+If you can answer at least one of those questions with yes, then you likely have a container component.
+
+#### Global or Application Scope?
+
+Components can be categorized as either local (e.g. `pkg/webui/{console|oauth}/{components|containers}`) or global (e.g. `pkg/webui/{components|containers}`). The distinction should come naturally: Global components are ones that can be used universally in every application. Local components are tied to a specific use case inside the repsective application.
+
+Sometimes, you might find that during implementing an application specific component that it can actually be generalized without much refactoring and hence be a useful addition to our global component library.
+
+### Frontend Related Pull Requests
+
+Pull requests for frontend related changes generally follow our overall pull request scheme. However, in order to assist reviewers, a browser screenshot of the changes is included in the PR comment, if applicable.
+
+It might help you to employ the following checklist before opening the pull request:
+
+* [ ] All messages [translated](#frontend-translations)?
+* [ ] No large files (e.g. unminified SVG assets)?
+* [ ] Screenshot in PR description?
+* [ ] Responsiveness checked?
+* [ ] New components [categorized correctly](#global-or-application-scope) (global/local, container/component)?
+* [ ] Feature flags added (if applicable)?
+* [ ] All views use `<IntlHelmet />` properly?
+* [ ] Storybook story added / updated?
+* [ ] Prop types / default props added?
+
 ## Translations
 
 We do our best to make all text that could be visible to users available for translation. This means that all text of the console's user interface, as well as all text that it may forward from the backend, needs to be defined in such a way that it can be translated into other languages than English.
