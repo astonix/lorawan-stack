@@ -72,7 +72,7 @@ const createEventsConnectLogics = function(reducerName, entityName, onEventsStar
 
         const id = typeof action.id === 'object' ? getCombinedDeviceId(action.id) : action.id
 
-        // only proceed if not already connected
+        // Only proceed if not already connected.
         const status = selectEntityEventsStatus(getState(), id)
         const connected = status === CONNECTION_STATUS.CONNECTED
         const connecting = status === CONNECTION_STATUS.CONNECTING
@@ -112,7 +112,7 @@ const createEventsConnectLogics = function(reducerName, entityName, onEventsStar
 
         const id = typeof action.id === 'object' ? getCombinedDeviceId(action.id) : action.id
 
-        // only proceed if connected
+        // Only proceed if connected.
         const status = selectEntityEventsStatus(getState(), id)
         const connected = status === CONNECTION_STATUS.CONNECTED
         const connecting = status === CONNECTION_STATUS.CONNECTING

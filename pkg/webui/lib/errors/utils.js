@@ -16,7 +16,7 @@ import errorMessages from './error-messages'
 import grpcErrToHttpErr from './grpc-error-map'
 
 /**
- * Tests wether the error is a backend error object
+ * Tests wether the error is a backend error object.
  * @param {Object} error - The error to be tested.
  * @returns {boolean} `true` if `error` is translated, `false` otherwise.
  */
@@ -29,7 +29,7 @@ export const isBackend = error =>
   (error.code || error.grpc_code)
 
 /**
- * Returns wether the error is a frontend defined error object
+ * Returns wether the error is a frontend defined error object.
  * @param {Object} error - The error to be tested.
  * @returns {boolean} `true` if `error` is translated, `false` otherwise.
  */
@@ -39,7 +39,7 @@ export const isFrontend = error =>
   Boolean(error) && typeof error === 'object' && error.id && error.defaultMessage
 
 /**
- * Returns wether the error has a shape that is not well-known
+ * Returns wether the error has a shape that is not well-known.
  * @param {Object} error - The error to be tested.
  * @returns {boolean} `true` if `error` is translated, `false` otherwise.
  */
@@ -81,10 +81,11 @@ export const isNotFoundError = error => grpcStatusCode(error) === 5 || httpStatu
 export const isInternalError = error => grpcStatusCode(error) === 13 // NOTE: HTTP 500 can also be UnknownError.
 
 /**
- * Returns whether the grpc error represents an invalid argument or bad request error.
+ * Returns whether the grpc error represents an invalid argument or bad request
+ * error.
  * @param {Object} error - The error to be tested.
- * @returns {boolean} `true` if `error` represents an invalid argument or bad request error,
- * `false` otherwise.
+ * @returns {boolean} `true` if `error` represents an invalid argument or bad
+ * request error, `false` otherwise.
  */
 export const isInvalidArgumentError = error =>
   grpcStatusCode(error) === 3 || httpStatusCode(error) === 400
@@ -107,7 +108,8 @@ export const isPermissionDeniedError = error =>
   grpcStatusCode(error) === 7 || httpStatusCode(error) === 403
 
 /**
- * Returns whether the grpc error represents an error due to not being authenticated.
+ * Returns whether the grpc error represents an error due to not being
+ * authenticated.
  * @param {Object} error - The error to be tested.
  * @returns {boolean} `true` if `error` represents an `Unauthenticated` error,
  * `false` otherwise.
@@ -168,7 +170,7 @@ export const getBackendErrorMessageAttributes = error => error.details[0].attrib
  */
 export const toMessageProps = function(error) {
   let props
-  // Check if it is a error message and transform it to a intl message
+  // Check if it is a error message and transform it to a intl message.
   if (isBackend(error)) {
     props = {
       content: {
@@ -178,10 +180,10 @@ export const toMessageProps = function(error) {
       values: getBackendErrorMessageAttributes(error),
     }
   } else if (isTranslated(error)) {
-    // Fall back to normal message
+    // Fall back to normal message.
     props = { content: error }
   } else {
-    // Fall back to generic error message
+    // Fall back to generic error message.
     props = { content: errorMessages.genericError }
   }
 

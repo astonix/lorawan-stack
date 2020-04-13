@@ -13,11 +13,12 @@
 // limitations under the License.
 
 /**
- * from returns an array that contains the values of the keys of a which have a trueish value in b.
- * If only is passed, it is used as a whitelist for keys that should be used.
+ * from returns an array that contains the values of the keys of a which have a
+ * trueish value in b. If only is passed, it is used as a whitelist for keys
+ * that should be used.
  *
- * This can be used in conjunction with css modules and the classnames package to effectively created dynamic
- * classnames. Before:
+ * This can be used in conjunction with css modules and the classnames package
+ * to effectively created dynamic classnames. Before:
  *
  *     import classnames from "classnames"
  *     import styles from "./some/styles.css"
@@ -44,7 +45,8 @@
  * @param {Object} a - The object to take the values from.
  * @param {Object} b - The object that controls which values will be taken.
  * @param {Array} only - Filter the keys by name.
- * @returns {Array} - An array of values from a for which the key in b had a trueish value.
+ * @returns {Array} - An array of values from a for which the key in b had a
+ * trueish value.
  */
 export default function(a = {}, b = {}, only) {
   const res = []

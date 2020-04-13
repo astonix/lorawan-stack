@@ -73,7 +73,7 @@ class Http {
     const parsedComponent = component || this._parseStackComponent(endpoint)
     if (!this._stackConfig.isComponentAvailable(parsedComponent)) {
       // If the component has not been defined in The Things Stack config, make no
-      // request and throw an error instead
+      // request and throw an error instead.
       throw new Error(
         `Cannot run "${method.toUpperCase()} ${endpoint}" API call on disabled component: "${parsedComponent}"`,
       )
@@ -92,17 +92,17 @@ class Http {
 
       if (method === 'get' || method === 'delete') {
         // For GETs and DELETEs, convert payload to query params (should usually
-        // be field_mask only)
+        // be field_mask only).
         config.params = this._payloadToQueryParams(payload)
       } else {
-        // Otherwise pass data as request body
+        // Otherwise pass data as request body.
         config.data = payload
       }
 
       const response = await this[parsedComponent](config)
 
       if ('X-Warning' in response.headers || 'x-warning' in response.headers) {
-        // Dispatch a warning event when the server has set a warning header
+        // Dispatch a warning event when the server has set a warning header.
         EventHandler.dispatchEvent(
           EventHandler.EVENTS.WARNING,
           response.headers['X-Warning'] || response.headers['x-warning'],

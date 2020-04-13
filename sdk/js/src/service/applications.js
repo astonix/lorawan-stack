@@ -27,7 +27,7 @@ import PubSubs from './pubsubs'
  * data handling from different sources. It exposes an API to easily work with
  * application data.
  * @param {Object} api - The connector to be used by the service.
- * @param {Object} config - The configuration for the service
+ * @param {Object} config - The configuration for the service.
  * @param {string} config.defaultUserId - The users identifier to be used in
  * user related requests.
  * @param {boolean} config.proxy - The flag to identify if the results
@@ -60,7 +60,7 @@ class Applications {
     this.PubSubs = new PubSubs(api.ApplicationPubSubRegistry)
   }
 
-  // Retrieval
+  // Retrieval.
 
   async getAll(params, selector) {
     const response = await this._api.ApplicationRegistry.List(undefined, {
@@ -108,7 +108,7 @@ class Applications {
     return Marshaler.unwrapApplications(response)
   }
 
-  // Update
+  // Update.
 
   async updateById(
     id,
@@ -132,7 +132,7 @@ class Applications {
     return Marshaler.unwrapApplication(response)
   }
 
-  // Create
+  // Creation.
 
   async create(ownerId = this._defaultUserId, application, isUserOwner = true) {
     const routeParams = isUserOwner
@@ -147,7 +147,7 @@ class Applications {
     return Marshaler.unwrapApplication(response)
   }
 
-  // Delete
+  // Deletion.
 
   async deleteById(applicationId) {
     const response = await this._api.ApplicationRegistry.Delete({
@@ -156,6 +156,8 @@ class Applications {
 
     return Marshaler.payloadSingleResponse(response)
   }
+
+  // Miscellaneous.
 
   async getRightsById(applicationId) {
     const result = await this._api.ApplicationAccess.ListRights({

@@ -12,7 +12,8 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/** Combines multiple streams into a single subscription provider
+/**
+ * Combines multiple streams into a single subscription provider
  * @param {Array} streams - An array of (async) stream functions.
  * @returns {Object} The stream subscription object with the `on` function for
  * attaching listeners and the `close` function to close the stream.

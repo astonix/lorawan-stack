@@ -20,8 +20,10 @@ const lwCache = {}
 
 /**
  * Parses string representation of the lorawan mac version to number.
- * @param {string} strMacVersion - Formatted string representation fot the lorawan mac version, e.g. 1.1.0.
- * @returns {number} - Number representation of the lorawan mac version. Returns 0 if provided
+ * @param {string} strMacVersion - Formatted string representation fot the
+ * lorawan mac version, e.g. 1.1.0.
+ * @returns {number} - Number representation of the lorawan mac version. Returns
+ * 0 if provided
  * argument is not a valid string representation of the lorawan mac version.
  * @example
  *  const parsedVersion = parseLorawanMacVersion('1.0.0'); // returns 100
@@ -51,9 +53,10 @@ export const parseLorawanMacVersion = strMacVersion => {
 
 /**
  * Returns whether the device is OTAA.
- * Note: device type is mainly derived based on the `supports_join` and `multicast` fields.
- * However, in cases when NS is not available, `root_keys` can be used to determine whether
- * the device is OTAA.
+ * Note: device type is mainly derived based on the `supports_join` and
+ * `multicast` fields.
+ * However, in cases when NS is not available, `root_keys` can be used to
+ * determine whether the device is OTAA.
  * @param {Object} device - The device object.
  * @returns {boolean} `true` if the device is OTAA, `false` otherwise
  */
@@ -78,7 +81,8 @@ export const isDeviceMulticast = device => Boolean(device) && Boolean(device.mul
 /**
  * Returns whether an end device is provisioned on an external join server.
  * @param {Object} device - The device object.
- * @returns {boolean} `true` if the end device is provisioned on an external join server, `false` otherwise.
+ * @returns {boolean} `true` if the end device is provisioned on an external
+ * join server, `false` otherwise.
  */
 export const hasExternalJs = device => {
   const { enabled, base_url } = selectJsConfig()

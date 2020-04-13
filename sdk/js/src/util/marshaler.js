@@ -18,7 +18,7 @@
 import traverse from 'traverse'
 import queryString from 'query-string'
 
-/** Class used to marshal data shapes. Currently a stub. */
+/** Class used to marshal data shapes. */
 class Marshaler {
   static options(options) {
     if (Object.keys(options).length === 0) {
@@ -151,7 +151,8 @@ class Marshaler {
     return paths
   }
 
-  /** This function will convert a paths object to a proper field mask.
+  /**
+   * This function will convert a paths object to a proper field mask.
    * @param {Object} paths - The raw field mask as array and/or string.
    * @returns {Object} The field mask object ready to be attached to a request.
    */
@@ -162,7 +163,8 @@ class Marshaler {
     return { field_mask: { paths: paths.map(e => e.join('.')) } }
   }
 
-  /** This function will convert a selector parameter and convert it to a
+  /**
+   * This function will convert a selector parameter and convert it to a
    * streamlined array of paths.
    * @param {Object} selector - The raw selector passed by the user
    * @returns {Object} The field mask object ready to be attached to a request.
@@ -177,7 +179,8 @@ class Marshaler {
     return selector
   }
 
-  /** This function will convert a selector parameter and convert it to a
+  /**
+   * This function will convert a selector parameter and convert it to a
    * proper field mask object, ready to be passed to the API.
    * @param {Object} selector - The raw selector passed by the user
    * @returns {Object} The field mask object ready to be attached to a request.

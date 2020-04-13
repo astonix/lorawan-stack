@@ -70,10 +70,10 @@ const createRequestLogic = function(
       try {
         const res = await options.process(deps, dispatch)
 
-        // After successful request, dispatch success action
+        // After successful request, dispatch success action.
         dispatch(successAction(res))
 
-        // If we have a promise attached, resolve it
+        // If we have a promise attached, resolve it.
         if (promiseAttached) {
           const {
             meta: { _resolve },
@@ -81,20 +81,20 @@ const createRequestLogic = function(
           _resolve(res)
         }
       } catch (e) {
-        error(e) // Log the error if in development mode
+        error(e) // Log the error if in development mode.
 
         if (isUnauthenticatedError(e)) {
-          // If there was an unauthenticated error, log the user out
+          // If there was an unauthenticated error, log the user out.
           dispatch(user.logoutSuccess())
         } else {
-          // Otherwise, dispatch the fail action and report it to Sentry
+          // Otherwise, dispatch the fail action and report it to Sentry.
           if (isUnknown(e) || isInvalidArgumentError(e)) {
             Sentry.captureException(failAction(e))
           }
           dispatch(failAction(e))
         }
 
-        // If we have a promise attached, reject it
+        // If we have a promise attached, reject it.
         if (promiseAttached) {
           const {
             meta: { _reject },

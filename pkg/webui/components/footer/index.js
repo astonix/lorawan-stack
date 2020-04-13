@@ -65,10 +65,10 @@ const Footer = function({ className, links, supportLink }) {
 }
 
 Footer.propTypes = {
-  /** The classname to be applied to the footer */
+  /** The classname to be applied to the footer. */
   className: PropTypes.string,
   /**
-   * A list of links to be displayed in the footer component
+   * A list of links to be displayed in the footer component.
    * @param {(string|Object)} title - The title of the link
    * @param {string} link - The link url
    */
@@ -78,7 +78,7 @@ Footer.propTypes = {
       link: PropTypes.string.isRequired,
     }),
   ),
-  /** Optional link for a support button */
+  /** Optional link for a support button. */
   supportLink: PropTypes.string,
 }
 
