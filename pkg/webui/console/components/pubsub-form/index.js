@@ -24,11 +24,16 @@ import Select from '../../../components/select'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
 import Notification from '../../../components/notification'
-import Message from '../../../lib/components/message'
 import ModalButton from '../../../components/button/modal-button'
+
 import PubsubFormatSelector from '../../containers/pubsub-formats-select'
+
+import Message from '../../../lib/components/message'
+
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
+
+import m from './messages'
 
 import {
   mapPubsubToFormValues,
@@ -36,7 +41,6 @@ import {
   blankValues,
   mapNatsServerUrlToFormValue,
 } from './mapping'
-import m from './messages'
 import { qosOptions } from './qos-options'
 import validationSchema from './validation-schema'
 

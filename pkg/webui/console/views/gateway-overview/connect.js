@@ -14,6 +14,12 @@
 
 import { connect } from 'react-redux'
 
+import {
+  checkFromState,
+  mayViewOrEditGatewayApiKeys,
+  mayViewOrEditGatewayCollaborators,
+} from '../../lib/feature-checks'
+
 import { getCollaboratorsList } from '../../store/actions/collaborators'
 import { getApiKeysList } from '../../store/actions/api-keys'
 import { selectSelectedGateway, selectSelectedGatewayId } from '../../store/selectors/gateways'
@@ -22,12 +28,6 @@ import {
   selectCollaboratorsTotalCount,
   selectCollaboratorsFetching,
 } from '../../store/selectors/collaborators'
-
-import {
-  checkFromState,
-  mayViewOrEditGatewayApiKeys,
-  mayViewOrEditGatewayCollaborators,
-} from '../../lib/feature-checks'
 
 const mapStateToProps = state => {
   const gtwId = selectSelectedGatewayId(state)

@@ -19,22 +19,26 @@ import { defineMessages } from 'react-intl'
 import { Switch, Route } from 'react-router'
 import bind from 'autobind-decorator'
 
-import sharedMessages from '../../../lib/shared-messages'
 import PageTitle from '../../../components/page-title'
-import Message from '../../../lib/components/message'
 import Link from '../../../components/link'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
+
+import Message from '../../../lib/components/message'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
+
 import { listWebhookTemplates } from '../../store/actions/webhook-templates'
-import ApplicationWebhookAddForm from '../application-integrations-webhook-add-form'
 import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import {
   selectWebhookTemplates,
   selectWebhookTemplatesFetching,
 } from '../../store/selectors/webhook-templates'
-import PropTypes from '../../../lib/prop-types'
 
+import ApplicationWebhookAddForm from '../application-integrations-webhook-add-form'
 import BlankWebhookImg from '../../../assets/misc/blank-webhook.svg'
+
 import style from './application-integrations-webhook-add-choose.styl'
 
 const m = defineMessages({

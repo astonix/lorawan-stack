@@ -19,16 +19,18 @@ import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 import { replace } from 'connected-react-router'
 
-import PropTypes from '../../../lib/prop-types'
 import toast from '../../../components/toast'
-import sharedMessages from '../../../lib/shared-messages'
-import withRequest from '../../../lib/components/with-request'
 import PageTitle from '../../../components/page-title'
 import UserDataForm from '../../components/user-data-form'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 
+import withRequest from '../../../lib/components/with-request'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 import diff from '../../../lib/diff'
+
 import { selectSelectedUser } from '../../store/selectors/users'
 import { getUser, updateUser, deleteUser } from '../../store/actions/users'
 import { attachPromise } from '../../store/actions/lib'

@@ -17,6 +17,7 @@ import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
 import PropTypes from '../../lib/prop-types'
+
 import Input from '../input'
 import Button from '../button'
 

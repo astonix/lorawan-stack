@@ -15,6 +15,14 @@
 import { connect } from 'react-redux'
 
 import {
+  checkFromState,
+  mayViewOrEditApplicationApiKeys,
+  mayViewOrEditApplicationCollaborators,
+  mayViewApplicationDevices,
+  mayLinkApplication,
+} from '../../lib/feature-checks'
+
+import {
   selectSelectedApplication,
   selectSelectedApplicationId,
   selectApplicationLinkIndicator,
@@ -30,14 +38,6 @@ import { getCollaboratorsList } from '../../store/actions/collaborators'
 import { getApiKeysList } from '../../store/actions/api-keys'
 import { getApplicationLink } from '../../store/actions/link'
 import { getApplicationDeviceCount } from '../../store/actions/applications'
-
-import {
-  checkFromState,
-  mayViewOrEditApplicationApiKeys,
-  mayViewOrEditApplicationCollaborators,
-  mayViewApplicationDevices,
-  mayLinkApplication,
-} from '../../lib/feature-checks'
 
 const mapStateToProps = (state, props) => {
   const appId = selectSelectedApplicationId(state)

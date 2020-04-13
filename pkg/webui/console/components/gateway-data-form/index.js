@@ -17,14 +17,20 @@ import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 import * as Yup from 'yup'
 
+import delay from '../../constants/delays'
+
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import Checkbox from '../../../components/checkbox'
 import SubmitBar from '../../../components/submit-bar'
-import Message from '../../../lib/components/message'
-import PropTypes from '../../../lib/prop-types'
+import UnitInput from '../../../components/unit-input'
+
 import { GsFrequencyPlansSelect } from '../../containers/freq-plans-select'
-import delay from '../../constants/delays'
+import OwnersSelect from '../../containers/owners-select'
+
+import Message from '../../../lib/components/message'
+
+import PropTypes from '../../../lib/prop-types'
 import sharedMessages from '../../../lib/shared-messages'
 import {
   id as gatewayIdRegexp,
@@ -33,8 +39,7 @@ import {
   emptyDuration as emptyDurationRegexp,
   delay as delayRegexp,
 } from '../../lib/regexp'
-import OwnersSelect from '../../containers/owners-select'
-import UnitInput from '../../../components/unit-input'
+
 const m = defineMessages({
   enforced: 'Enforced',
   dutyCycle: 'Duty Cycle',

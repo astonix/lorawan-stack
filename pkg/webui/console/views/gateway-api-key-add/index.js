@@ -18,12 +18,18 @@ import bind from 'autobind-decorator'
 import { connect } from 'react-redux'
 import { replace } from 'connected-react-router'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import sharedMessages from '../../../lib/shared-messages'
 import { ApiKeyCreateForm } from '../../components/api-key-form'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
+import sharedMessages from '../../../lib/shared-messages'
+import { mayViewOrEditGatewayApiKeys } from '../../lib/feature-checks'
+import PropTypes from '../../../lib/prop-types'
 
 import {
   selectSelectedGatewayId,
@@ -32,10 +38,6 @@ import {
   selectGatewayRightsFetching,
   selectGatewayPseudoRights,
 } from '../../store/selectors/gateways'
-import { mayViewOrEditGatewayApiKeys } from '../../lib/feature-checks'
-
-import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
 
 @connect(
   (state, props) => ({

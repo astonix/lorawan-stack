@@ -21,8 +21,8 @@ import Select from '../../../components/select'
 import Input from '../../../components/input'
 
 import PropTypes from '../../../lib/prop-types'
-import computePrefix from './compute-prefix'
 
+import computePrefix from './compute-prefix'
 import style from './join-eui-prefixes-input.styl'
 
 const m = defineMessages({

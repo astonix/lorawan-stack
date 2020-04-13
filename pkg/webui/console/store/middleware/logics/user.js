@@ -12,9 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as user from '../../actions/user'
 import api from '../../../api'
+
 import * as accessToken from '../../../lib/access-token'
+
+import * as user from '../../actions/user'
+
 import createRequestLogic from './lib'
 
 export default [

@@ -14,10 +14,11 @@
 
 import React from 'react'
 
-import Notification from '../notification'
 import { isBackend, toMessageProps } from '../../lib/errors/utils'
 import { error } from '../../lib/log'
 import PropTypes from '../../lib/prop-types'
+
+import Notification from '../notification'
 
 const ErrorNotification = function({ content, ...rest }) {
   const message = toMessageProps(content)

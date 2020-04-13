@@ -17,14 +17,12 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import bind from 'autobind-decorator'
 
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
 import HeaderComponent from '../../../components/header'
 import NavigationBar from '../../../components/navigation/bar'
 import Dropdown from '../../../components/dropdown'
 
-import { logout } from '../../store/actions/user'
-import { selectUser } from '../../store/selectors/user'
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 import {
   checkFromState,
   mayViewApplications,
@@ -32,6 +30,9 @@ import {
   mayViewOrganizationsOfUser,
   mayManageUsers,
 } from '../../lib/feature-checks'
+
+import { logout } from '../../store/actions/user'
+import { selectUser } from '../../store/selectors/user'
 
 @withRouter
 @connect(

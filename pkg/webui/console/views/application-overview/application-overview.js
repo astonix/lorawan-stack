@@ -15,23 +15,25 @@
 import React from 'react'
 import { Col, Row, Container } from 'react-grid-system'
 
-import sharedMessages from '../../../lib/shared-messages'
-import PropTypes from '../../../lib/prop-types'
 import PAGE_SIZES from '../../constants/page-sizes'
 
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import DateTime from '../../../lib/components/date-time'
-import DevicesTable from '../../containers/devices-table'
 import DataSheet from '../../../components/data-sheet'
-import ApplicationEvents from '../../containers/application-events'
 import EntityTitleSection from '../../components/entity-title-section'
 import KeyValueTag from '../../components/key-value-tag'
 import Status from '../../../components/status'
 import Spinner from '../../../components/spinner'
+
+import ApplicationEvents from '../../containers/application-events'
+import DevicesTable from '../../containers/devices-table'
+
+import DateTime from '../../../lib/components/date-time'
+import IntlHelmet from '../../../lib/components/intl-helmet'
 import Message from '../../../lib/components/message'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 import withRequest from '../../../lib/components/with-request'
 
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewApplicationInfo } from '../../lib/feature-checks'
 
 import style from './application-overview.styl'

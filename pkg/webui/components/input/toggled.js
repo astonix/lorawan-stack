@@ -20,8 +20,10 @@ import sharedMessages from '../../lib/shared-messages'
 import PropTypes from '../../lib/prop-types'
 
 import Checkbox from '../checkbox'
+
 import style from './toggled.styl'
-import Input from './'
+
+import Input from '.'
 
 @bind
 class Toggled extends Component {

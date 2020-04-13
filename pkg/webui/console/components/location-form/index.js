@@ -19,12 +19,13 @@ import * as Yup from 'yup'
 
 import Form from '../../../components/form'
 import Input from '../../../components/input'
-import Message from '../../../lib/components/message'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
 import Notification from '../../../components/notification'
 import ModalButton from '../../../components/button/modal-button'
 import toast from '../../../components/toast'
+
+import Message from '../../../lib/components/message'
 
 import { latitude as latitudeRegexp, longitude as longitudeRegexp } from '../../lib/regexp'
 import sharedMessages from '../../../lib/shared-messages'

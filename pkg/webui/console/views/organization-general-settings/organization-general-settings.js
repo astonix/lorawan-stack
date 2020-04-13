@@ -27,12 +27,12 @@ import toast from '../../../components/toast'
 import Form from '../../../components/form'
 import OrganizationForm from '../../components/organization-form'
 
-import diff from '../../../lib/diff'
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 import Require from '../../lib/components/require'
 
+import diff from '../../../lib/diff'
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 import {
   mayEditBasicOrganizationInformation,
   mayDeleteOrganization,

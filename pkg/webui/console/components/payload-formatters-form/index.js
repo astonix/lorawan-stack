@@ -17,16 +17,19 @@ import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 import * as Yup from 'yup'
 
+import TYPES from '../../constants/formatter-types'
+
 import Form from '../../../components/form'
 import Radio from '../../../components/radio-button'
 import SubmitButton from '../../../components/submit-button'
 import SubmitBar from '../../../components/submit-bar'
+import Input from '../../../components/input'
+import CodeEditor from '../../../components/code-editor'
+
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
 import { address as addressRegexp } from '../../lib/regexp'
-import Input from '../../../components/input'
-import CodeEditor from '../../../components/code-editor'
-import TYPES from '../../constants/formatter-types'
+
 import { getDefaultGrpcServiceFormatter, getDefaultJavascriptFormatter } from './formatter-values'
 
 const m = defineMessages({

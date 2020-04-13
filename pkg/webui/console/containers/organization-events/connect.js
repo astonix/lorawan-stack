@@ -15,7 +15,6 @@
 import { connect } from 'react-redux'
 
 import { clearOrganizationEventsStream } from '../../store/actions/organizations'
-
 import {
   selectOrganizationEvents,
   selectOrganizationEventsStatus,

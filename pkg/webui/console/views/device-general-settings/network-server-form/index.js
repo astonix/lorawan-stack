@@ -21,17 +21,18 @@ import Input from '../../../../components/input'
 import Radio from '../../../../components/radio-button'
 import Select from '../../../../components/select'
 import Form from '../../../../components/form'
-import { NsFrequencyPlansSelect } from '../../../containers/freq-plans-select'
-import DevAddrInput from '../../../containers/dev-addr-input'
 import Notification from '../../../../components/notification'
 
+import { NsFrequencyPlansSelect } from '../../../containers/freq-plans-select'
+import DevAddrInput from '../../../containers/dev-addr-input'
+
 import diff from '../../../../lib/diff'
-import m from '../../../components/device-data-form/messages'
-import messages from '../messages'
 import sharedMessages from '../../../../lib/shared-messages'
 import randomByteString from '../../../lib/random-bytes'
 import PropTypes from '../../../../lib/prop-types'
 
+import m from '../../../components/device-data-form/messages'
+import messages from '../messages'
 import {
   parseLorawanMacVersion,
   isDeviceABP,
@@ -41,6 +42,7 @@ import {
   isDeviceJoined,
   isDeviceOTAA,
 } from '../utils'
+
 import validationSchema from './validation-schema'
 
 const random16BytesString = () => randomByteString(32)

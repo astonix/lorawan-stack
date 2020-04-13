@@ -18,8 +18,10 @@ import classnames from 'classnames'
 
 import DateTime from '../../../lib/components/date-time'
 import Message from '../../../lib/components/message'
+
 import PropTypes from '../../../lib/prop-types'
 import sharedMessages from '../../../lib/shared-messages'
+
 import style from './entity-title-section.styl'
 
 const EntityTitleSection = ({ entityName, entityId, description, creationDate, children }) => {

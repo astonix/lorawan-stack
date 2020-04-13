@@ -16,19 +16,20 @@ import React from 'react'
 import { defineMessages } from 'react-intl'
 import bind from 'autobind-decorator'
 
-import FetchTable from '../fetch-table'
 import Message from '../../../lib/components/message'
 
 import sharedMessages from '../../../lib/shared-messages'
+import { natsUrl as natsUrlRegexp } from '../../lib/regexp'
+import PropTypes from '../../../lib/prop-types'
 
-import { getPubsubsList } from '../../../console/store/actions/pubsubs'
+import { getPubsubsList } from '../../store/actions/pubsubs'
 import {
   selectPubsubs,
   selectPubsubsTotalCount,
   selectPubsubsFetching,
-} from '../../../console/store/selectors/pubsubs'
-import { natsUrl as natsUrlRegexp } from '../../lib/regexp'
-import PropTypes from '../../../lib/prop-types'
+} from '../../store/selectors/pubsubs'
+
+import FetchTable from '../fetch-table'
 
 const m = defineMessages({
   format: 'Format',

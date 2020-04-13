@@ -17,22 +17,23 @@ import bind from 'autobind-decorator'
 import { Container, Col, Row } from 'react-grid-system'
 
 import DataSheet from '../../../components/data-sheet'
-import GatewayConnection from '../../containers/gateway-connection'
-import GatewayEvents from '../../containers/gateway-events'
 import Tag from '../../../components/tag'
-
-import sharedMessages from '../../../lib/shared-messages'
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import DateTime from '../../../lib/components/date-time'
-import Message from '../../../lib/components/message'
-import PropTypes from '../../../lib/prop-types'
 import GatewayMap from '../../components/gateway-map'
 import EntityTitleSection from '../../components/entity-title-section'
 import KeyValueTag from '../../components/key-value-tag'
 import Spinner from '../../../components/spinner'
+
+import GatewayEvents from '../../containers/gateway-events'
+import GatewayConnection from '../../containers/gateway-connection'
+
+import Message from '../../../lib/components/message'
+import DateTime from '../../../lib/components/date-time'
+import IntlHelmet from '../../../lib/components/intl-helmet'
 import withRequest from '../../../lib/components/with-request'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 import { mayEditBasicGatewayInformation } from '../../lib/feature-checks'
 
 @withRequest(({ gtwId, loadData }) => loadData(gtwId), () => false)

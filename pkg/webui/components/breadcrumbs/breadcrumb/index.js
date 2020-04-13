@@ -15,9 +15,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import Link from '../../link'
 import Message from '../../../lib/components/message'
+
 import PropTypes from '../../../lib/prop-types'
+
+import Link from '../../link'
 
 import style from './breadcrumb.styl'
 

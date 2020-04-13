@@ -16,25 +16,25 @@ import React from 'react'
 import { Container, Row, Col } from 'react-grid-system'
 
 import Button from '../../../components/button'
+import Footer from '../../../components/footer'
+
+import Header from '../../containers/header'
+
 import Message from '../../../lib/components/message'
 import ErrorMessage from '../../../lib/components/error-message'
 import { withEnv } from '../../../lib/components/env'
 import IntlHelmet from '../../../lib/components/intl-helmet'
-import Footer from '../../../components/footer'
+
 import sharedMessages from '../../../lib/shared-messages'
 import errorMessages from '../../../lib/errors/error-messages'
-
-import Header from '../../containers/header'
-
 import {
   httpStatusCode,
   isUnknown as isUnknownError,
   isNotFoundError,
 } from '../../../lib/errors/utils'
-
 import statusCodeMessages from '../../../lib/errors/status-code-messages'
-
 import PropTypes from '../../../lib/prop-types'
+
 import style from './error.styl'
 
 const reload = () => location.reload()

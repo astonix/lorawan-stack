@@ -18,7 +18,9 @@ import { defineMessages } from 'react-intl'
 import PortalledModal from '../../../components/modal/portalled'
 import SafeInspector from '../../../components/safe-inspector'
 import Icon from '../../../components/icon'
+
 import Message from '../../../lib/components/message'
+
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
 

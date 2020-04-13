@@ -18,12 +18,17 @@ import bind from 'autobind-decorator'
 import { Container, Col, Row } from 'react-grid-system'
 import { replace } from 'connected-react-router'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
-import sharedMessages from '../../../lib/shared-messages'
 import { ApiKeyEditForm } from '../../components/api-key-form'
+
 import withRequest from '../../../lib/components/with-request'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { getApiKey } from '../../store/actions/api-keys'
 import {
@@ -38,9 +43,6 @@ import {
   selectApiKeyError,
   selectApiKeyFetching,
 } from '../../store/selectors/api-keys'
-
-import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
 
 @connect(
   function(state, props) {

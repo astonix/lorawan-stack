@@ -14,11 +14,13 @@
 
 import React from 'react'
 import classnames from 'classnames'
+
+import Message from '../../lib/components/message'
+
 import PropTypes from '../../lib/prop-types'
 import sharedMessages from '../../lib/shared-messages'
 
 import Spinner from '../spinner'
-import Message from '../../lib/components/message'
 
 import style from './overlay.styl'
 

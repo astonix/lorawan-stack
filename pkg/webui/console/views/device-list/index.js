@@ -16,13 +16,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Col, Row, Container } from 'react-grid-system'
 
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import sharedMessages from '../../../lib/shared-messages'
+import PAGE_SIZES from '../../constants/page-sizes'
+
 import DevicesTable from '../../containers/devices-table'
 
-import { selectSelectedApplication } from '../../store/selectors/applications'
+import IntlHelmet from '../../../lib/components/intl-helmet'
 
-import PAGE_SIZES from '../../constants/page-sizes'
+import sharedMessages from '../../../lib/shared-messages'
+
+import { selectSelectedApplication } from '../../store/selectors/applications'
 
 @connect(function(state, props) {
   return {

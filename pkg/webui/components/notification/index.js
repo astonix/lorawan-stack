@@ -15,12 +15,14 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import Button from '../button'
 import Message from '../../lib/components/message'
-import Icon from '../icon'
-import PropTypes from '../../lib/prop-types'
-import Details from './details'
 
+import PropTypes from '../../lib/prop-types'
+
+import Button from '../button'
+import Icon from '../icon'
+
+import Details from './details'
 import style from './notification.styl'
 
 const Notification = function({

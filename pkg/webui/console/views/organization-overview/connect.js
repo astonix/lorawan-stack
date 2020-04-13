@@ -14,6 +14,12 @@
 
 import { connect } from 'react-redux'
 
+import {
+  checkFromState,
+  mayViewOrEditOrganizationApiKeys,
+  mayViewOrEditOrganizationCollaborators,
+} from '../../lib/feature-checks'
+
 import { getCollaboratorsList } from '../../store/actions/collaborators'
 import { getApiKeysList } from '../../store/actions/api-keys'
 import {
@@ -25,12 +31,6 @@ import {
   selectCollaboratorsTotalCount,
   selectCollaboratorsFetching,
 } from '../../store/selectors/collaborators'
-
-import {
-  checkFromState,
-  mayViewOrEditOrganizationApiKeys,
-  mayViewOrEditOrganizationCollaborators,
-} from '../../lib/feature-checks'
 
 const mapStateToProps = state => {
   const orgId = selectSelectedOrganizationId(state)

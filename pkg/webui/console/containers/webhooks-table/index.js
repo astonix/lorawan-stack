@@ -16,18 +16,19 @@ import React from 'react'
 import { defineMessages } from 'react-intl'
 import bind from 'autobind-decorator'
 
-import FetchTable from '../fetch-table'
 import Message from '../../../lib/components/message'
 
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
 
-import { getWebhooksList } from '../../../console/store/actions/webhooks'
+import { getWebhooksList } from '../../store/actions/webhooks'
 import {
   selectWebhooks,
   selectWebhooksTotalCount,
   selectWebhooksFetching,
-} from '../../../console/store/selectors/webhooks'
+} from '../../store/selectors/webhooks'
+
+import FetchTable from '../fetch-table'
 
 import style from './webhooks-table.styl'
 

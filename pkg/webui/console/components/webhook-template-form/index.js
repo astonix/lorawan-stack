@@ -19,15 +19,19 @@ import bind from 'autobind-decorator'
 import urlTemplate from 'url-template'
 
 import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
-import { id as webhookIdRegexp } from '../../lib/regexp'
-import WebhookTemplateInfo from '../webhook-template-info'
+
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
+
 import Message from '../../../lib/components/message'
+
+import { id as webhookIdRegexp } from '../../lib/regexp'
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
+
+import WebhookTemplateInfo from '../webhook-template-info'
 
 const m = defineMessages({
   createTemplate: 'Create {template} webhook',

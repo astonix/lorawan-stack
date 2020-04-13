@@ -18,16 +18,19 @@ import { defineMessages } from 'react-intl'
 import { Container, Col, Row } from 'react-grid-system'
 
 import PageTitle from '../../../components/page-title'
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import GatewayEvents from '../../containers/gateway-events'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
-import { selectSelectedGatewayId } from '../../store/selectors/gateways'
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewGatewayEvents } from '../../lib/feature-checks'
-
 import PropTypes from '../../../lib/prop-types'
+
+import { selectSelectedGatewayId } from '../../store/selectors/gateways'
+
 import style from './gateway-data.styl'
 
 const m = defineMessages({

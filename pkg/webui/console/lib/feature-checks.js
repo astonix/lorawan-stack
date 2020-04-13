@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { selectStackConfig } from '../../lib/selectors/env'
+
 import { selectApplicationRights } from '../store/selectors/applications'
 import { selectGatewayRights } from '../store/selectors/gateways'
 import { selectOrganizationRights } from '../store/selectors/organizations'

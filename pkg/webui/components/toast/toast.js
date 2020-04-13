@@ -15,9 +15,9 @@
 import React from 'react'
 import { toast as t } from 'react-toastify'
 
-import Notification from '../notification'
-
 import diff from '../../lib/diff'
+
+import Notification from '../notification'
 
 import style from './toast.styl'
 

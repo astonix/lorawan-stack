@@ -15,6 +15,8 @@
 import { connect } from 'react-redux'
 import { replace } from 'connected-react-router'
 
+import api from '../../api'
+
 import withRequest from '../../../lib/components/with-request'
 
 import { getApiKey } from '../../store/actions/api-keys'
@@ -30,7 +32,6 @@ import {
   selectApiKeyError,
   selectApiKeyFetching,
 } from '../../store/selectors/api-keys'
-import api from '../../api'
 
 export default OrganizationApiKeyEdit =>
   connect(

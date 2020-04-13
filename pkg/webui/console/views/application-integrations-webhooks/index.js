@@ -16,19 +16,17 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import ErrorView from '../../../lib/components/error-view'
-import SubViewError from '../error/sub-view'
-import ApplicationWebhooksList from '../application-integrations-webhooks-list'
-import ApplicationWebhookAdd from '../application-integrations-webhook-add'
-import ApplicationWebhookEdit from '../application-integrations-webhook-edit'
-import ApplicationWebhookChoose from '../application-integrations-webhook-add-choose'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 import withRequest from '../../../lib/components/with-request'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 import { mayViewApplicationEvents } from '../../lib/feature-checks'
+
 import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import { listWebhookTemplates } from '../../store/actions/webhook-templates'
 import {
@@ -36,6 +34,12 @@ import {
   selectWebhookTemplatesFetching,
   selectWebhookTemplatesError,
 } from '../../store/selectors/webhook-templates'
+
+import ApplicationWebhookChoose from '../application-integrations-webhook-add-choose'
+import ApplicationWebhookEdit from '../application-integrations-webhook-edit'
+import ApplicationWebhookAdd from '../application-integrations-webhook-add'
+import ApplicationWebhooksList from '../application-integrations-webhooks-list'
+import SubViewError from '../error/sub-view'
 
 const selector = [
   'description',

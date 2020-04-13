@@ -17,16 +17,17 @@ import { Container, Col, Row } from 'react-grid-system'
 import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import WebhookForm from '../../components/webhook-form'
 import toast from '../../../components/toast'
+
 import diff from '../../../lib/diff'
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
-
-import api from '../../api'
 
 const m = defineMessages({
   editWebhook: 'Edit Webhook',

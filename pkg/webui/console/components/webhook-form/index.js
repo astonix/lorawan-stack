@@ -17,19 +17,23 @@ import { defineMessages } from 'react-intl'
 import * as Yup from 'yup'
 import bind from 'autobind-decorator'
 
-import WebhookTemplateInfo from '../../components/webhook-template-info'
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
 import Notification from '../../../components/notification'
-import Message from '../../../lib/components/message'
 import KeyValueMap from '../../../components/key-value-map'
 import ModalButton from '../../../components/button/modal-button'
+
 import WebhookFormatSelector from '../../containers/webhook-formats-select'
+
+import Message from '../../../lib/components/message'
+
 import sharedMessages from '../../../lib/shared-messages'
 import { id as webhookIdRegexp, apiKey as webhookAPIKeyRegexp } from '../../lib/regexp'
 import PropTypes from '../../../lib/prop-types'
+
+import WebhookTemplateInfo from '../webhook-template-info'
 
 import { mapWebhookToFormValues, mapFormValuesToWebhook, blankValues } from './mapping'
 

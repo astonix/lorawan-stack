@@ -16,17 +16,21 @@ import React from 'react'
 import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
 import SubmitBar from '../../../components/submit-bar'
 import ModalButton from '../../../components/button/modal-button'
 import toast from '../../../components/toast'
-import Message from '../../../lib/components/message'
 import FormField from '../../../components/form/field'
 import FormSubmit from '../../../components/form/submit'
 import SubmitButton from '../../../components/submit-button'
 import Input from '../../../components/input'
-import RightsGroup from '../../../console/components/rights-group'
+
+import Message from '../../../lib/components/message'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
+
+import RightsGroup from '../rights-group'
+
 import ApiKeyForm from './form'
 import validationSchema from './validation-schema'
 

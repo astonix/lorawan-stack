@@ -17,6 +17,7 @@ import { storiesOf } from '@storybook/react'
 import { withInfo } from '@storybook/addon-info'
 
 import Dropdown from '../dropdown'
+
 import ProfileDropdown from '.'
 
 const handleLogout = function() {

@@ -16,6 +16,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import PropTypes from '../../lib/prop-types'
+
 import Link from '../link'
 
 import style from './logo.styl'

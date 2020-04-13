@@ -15,9 +15,11 @@
 import React from 'react'
 import { defineMessages } from 'react-intl'
 
-import PropTypes from '../../../lib/prop-types'
 import Link from '../../../components/link'
+
 import Message from '../../../lib/components/message'
+
+import PropTypes from '../../../lib/prop-types'
 
 import style from './webhook-template-info.styl'
 

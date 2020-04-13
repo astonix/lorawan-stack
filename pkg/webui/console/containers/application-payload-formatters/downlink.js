@@ -17,15 +17,20 @@ import bind from 'autobind-decorator'
 import { connect } from 'react-redux'
 import { defineMessages } from 'react-intl'
 
+import PAYLOAD_FORMATTER_TYPES from '../../constants/formatter-types'
+
+import api from '../../api'
+
 import Notification from '../../../components/notification'
 import PageTitle from '../../../components/page-title'
 import toast from '../../../components/toast'
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import PayloadFormattersForm from '../../components/payload-formatters-form'
-import PAYLOAD_FORMATTER_TYPES from '../../constants/formatter-types'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
+
 import { updateApplicationLinkSuccess } from '../../store/actions/link'
 import {
   selectApplicationIsLinked,
@@ -33,7 +38,6 @@ import {
   selectSelectedApplicationId,
 } from '../../store/selectors/applications'
 
-import api from '../../api'
 import style from './application-payload-formatters.styl'
 
 const m = defineMessages({

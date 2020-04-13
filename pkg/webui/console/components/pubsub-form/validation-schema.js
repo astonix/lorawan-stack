@@ -22,6 +22,7 @@ import {
   mqttPassword as mqttPasswordRegexp,
   noSpaces as noSpacesRegexp,
 } from '../../lib/regexp'
+
 import { qosLevels } from './qos-options'
 
 export default Yup.object().shape({

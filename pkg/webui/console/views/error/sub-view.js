@@ -17,8 +17,10 @@ import { Container, Row, Col } from 'react-grid-system'
 
 import Button from '../../../components/button'
 import Icon from '../../../components/icon'
+
 import Message from '../../../lib/components/message'
 import ErrorMessage from '../../../lib/components/error-message'
+
 import PropTypes from '../../../lib/prop-types'
 import { isBackend, isNotFoundError, httpStatusCode } from '../../../lib/errors/utils'
 import errorMessages from '../../../lib/errors/error-messages'

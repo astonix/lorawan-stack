@@ -22,11 +22,12 @@ import Form from '../../../../components/form'
 import Notification from '../../../../components/notification'
 
 import diff from '../../../../lib/diff'
-import m from '../../../components/device-data-form/messages'
-import messages from '../messages'
 import randomByteString from '../../../lib/random-bytes'
 import PropTypes from '../../../../lib/prop-types'
 import sharedMessages from '../../../../lib/shared-messages'
+
+import messages from '../messages'
+import m from '../../../components/device-data-form/messages'
 
 const random16BytesString = () => randomByteString(32)
 

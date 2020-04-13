@@ -14,16 +14,15 @@
 
 import { defineMessages } from 'react-intl'
 
-import CreateFetchSelect from '../fetch-select'
-
 import {
   selectGsFrequencyPlans,
   selectNsFrequencyPlans,
   selectFrequencyPlansError,
   selectFrequencyPlansFetching,
 } from '../../store/selectors/configuration'
-
 import { getGsFrequencyPlans, getNsFrequencyPlans } from '../../store/actions/configuration'
+
+import CreateFetchSelect from '../fetch-select'
 
 const m = defineMessages({
   title: 'Frequency Plan',

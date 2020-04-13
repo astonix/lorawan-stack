@@ -18,9 +18,10 @@ import { defineMessages } from 'react-intl'
 import classnames from 'classnames'
 
 import PropTypes from '../../lib/prop-types'
-import Button from '../button'
-import Entry from './entry'
 
+import Button from '../button'
+
+import Entry from './entry'
 import style from './key-value-map.styl'
 
 const m = defineMessages({

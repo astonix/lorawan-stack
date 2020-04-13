@@ -19,12 +19,16 @@ import { defineMessages } from 'react-intl'
 
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+import Notification from '../../../components/notification'
+
+import DeviceImporter from '../../containers/device-importer'
+
 import Message from '../../../lib/components/message'
 import IntlHelmet from '../../../lib/components/intl-helmet'
+
 import PropTypes from '../../../lib/prop-types'
-import DeviceImporter from '../../containers/device-importer'
-import Notification from '../../../components/notification'
 import sharedMessages from '../../../lib/shared-messages'
+
 import {
   selectDeviceTemplateFormats,
   selectDeviceTemplateFormatsFetching,

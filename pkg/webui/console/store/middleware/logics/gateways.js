@@ -14,12 +14,15 @@
 
 import { createLogic } from 'redux-logic'
 
-import sharedMessages from '../../../../lib/shared-messages'
 import api from '../../../api'
-import * as gateways from '../../actions/gateways'
+
+import sharedMessages from '../../../../lib/shared-messages'
 import { selectGsConfig } from '../../../../lib/selectors/env'
-import { selectGatewayById, selectGatewayStatisticsIsFetching } from '../../selectors/gateways'
 import { getGatewayId } from '../../../../lib/selectors/id'
+
+import * as gateways from '../../actions/gateways'
+import { selectGatewayById, selectGatewayStatisticsIsFetching } from '../../selectors/gateways'
+
 import createEventsConnectLogics from './events'
 import createRequestLogic from './lib'
 

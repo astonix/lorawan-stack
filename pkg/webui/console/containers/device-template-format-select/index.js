@@ -14,13 +14,14 @@
 
 import { defineMessages } from 'react-intl'
 
-import CreateFetchSelect from '../fetch-select'
 import {
   selectDeviceTemplateFormats,
   selectDeviceTemplateFormatsError,
   selectDeviceTemplateFormatsFetching,
 } from '../../store/selectors/device-template-formats'
 import { getDeviceTemplateFormats } from '../../store/actions/device-template-formats'
+
+import CreateFetchSelect from '../fetch-select'
 
 const m = defineMessages({
   title: 'Format',

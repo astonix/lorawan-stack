@@ -16,20 +16,23 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import ErrorView from '../../../lib/components/error-view'
-import SubViewError from '../error/sub-view'
 import NotFoundRoute from '../../../lib/components/not-found-route'
-import GatewayCollaboratorsList from '../gateway-collaborators-list'
-import GatewayCollaboratorAdd from '../gateway-collaborator-add'
-import GatewayCollaboratorEdit from '../gateway-collaborator-edit'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewOrEditGatewayCollaborators } from '../../lib/feature-checks'
+import PropTypes from '../../../lib/prop-types'
 
 import { selectSelectedGatewayId } from '../../store/selectors/gateways'
-import PropTypes from '../../../lib/prop-types'
+
+import GatewayCollaboratorEdit from '../gateway-collaborator-edit'
+import GatewayCollaboratorAdd from '../gateway-collaborator-add'
+import GatewayCollaboratorsList from '../gateway-collaborators-list'
+import SubViewError from '../error/sub-view'
 
 @connect(state => ({ gtwId: selectSelectedGatewayId(state) }))
 @withFeatureRequirement(mayViewOrEditGatewayCollaborators, {

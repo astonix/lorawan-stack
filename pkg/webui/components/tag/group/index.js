@@ -17,7 +17,8 @@ import bind from 'autobind-decorator'
 import classnames from 'classnames'
 
 import PropTypes from '../../../lib/prop-types'
-import Tag from '../.'
+
+import Tag from '..'
 
 import style from './group.styl'
 

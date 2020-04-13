@@ -15,6 +15,8 @@
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
 
+import api from '../../api'
+
 import {
   selectSelectedOrganizationId,
   selectOrganizationRights,
@@ -23,8 +25,6 @@ import {
   selectOrganizationRightsError,
 } from '../../store/selectors/organizations'
 import { getOrganizationsRightsList } from '../../store/actions/organizations'
-
-import api from '../../api'
 
 export default OrganizationCollaboratorAdd =>
   connect(

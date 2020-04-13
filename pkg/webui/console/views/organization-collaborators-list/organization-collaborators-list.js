@@ -15,13 +15,14 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-grid-system'
 
+import PAGE_SIZES from '../../constants/page-sizes'
+
 import CollaboratorsTable from '../../containers/collaborators-table'
 
 import IntlHelmet from '../../../lib/components/intl-helmet'
+
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
-
-import PAGE_SIZES from '../../constants/page-sizes'
 
 class OrganizationCollaboratorsList extends React.Component {
   static propTypes = {

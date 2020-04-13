@@ -15,10 +15,11 @@
 import axios from 'axios'
 import TTN from 'ttn-lw'
 
+import toast from '../../components/toast'
+
 import token from '../lib/access-token'
 import getCookieValue from '../../lib/cookie'
 import { selectStackConfig, selectApplicationRootPath } from '../../lib/selectors/env'
-import toast from '../../components/toast'
 
 const stackConfig = selectStackConfig()
 const appRoot = selectApplicationRootPath()

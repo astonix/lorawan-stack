@@ -12,11 +12,13 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+import api from '../../../api'
+
+import { isNotFoundError } from '../../../../lib/errors/utils'
+
 import * as applications from '../../actions/applications'
 import * as link from '../../actions/link'
 
-import api from '../../../api'
-import { isNotFoundError } from '../../../../lib/errors/utils'
 import createRequestLogic from './lib'
 import createEventsConnectLogics from './events'
 

@@ -18,11 +18,15 @@ import bind from 'autobind-decorator'
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import sharedMessages from '../../../lib/shared-messages'
 import CollaboratorForm from '../../components/collaborator-form'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import {
   selectSelectedGatewayId,
@@ -32,10 +36,7 @@ import {
   selectGatewayRightsError,
 } from '../../store/selectors/gateways'
 import { selectSelectedCollaborator } from '../../store/selectors/collaborators'
-
 import { getGatewaysRightsList } from '../../store/actions/gateways'
-import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
 
 @connect(
   state => ({

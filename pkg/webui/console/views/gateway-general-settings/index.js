@@ -21,8 +21,6 @@ import { bindActionCreators } from 'redux'
 import { replace } from 'connected-react-router'
 
 import toast from '../../../components/toast'
-import sharedMessages from '../../../lib/shared-messages'
-import PropTypes from '../../../lib/prop-types'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import GatewayDataForm from '../../components/gateway-data-form'
@@ -30,14 +28,18 @@ import ModalButton from '../../../components/button/modal-button'
 import FormSubmit from '../../../components/form/submit'
 import SubmitButton from '../../../components/submit-button'
 import PageTitle from '../../../components/page-title'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 import Require from '../../lib/components/require'
-import diff from '../../../lib/diff'
 
-import { updateGateway, deleteGateway } from '../../store/actions/gateways'
-import { attachPromise } from '../../store/actions/lib'
-import { selectSelectedGateway, selectSelectedGatewayId } from '../../store/selectors/gateways'
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
+import diff from '../../../lib/diff'
 import { mayEditBasicGatewayInformation, mayDeleteGateway } from '../../lib/feature-checks'
+
+import { selectSelectedGateway, selectSelectedGatewayId } from '../../store/selectors/gateways'
+import { attachPromise } from '../../store/actions/lib'
+import { updateGateway, deleteGateway } from '../../store/actions/gateways'
 
 const m = defineMessages({
   updateSuccess: 'Successfully updated gateway',

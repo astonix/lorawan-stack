@@ -15,19 +15,22 @@
 import React from 'react'
 import bind from 'autobind-decorator'
 
-import sharedMessages from '../../../lib/shared-messages'
-import Message from '../../../lib/components/message'
-import FetchTable from '../fetch-table'
 import Status from '../../../components/status'
 
-import { getGatewaysList } from '../../../console/store/actions/gateways'
+import Message from '../../../lib/components/message'
+
+import sharedMessages from '../../../lib/shared-messages'
+import { checkFromState, mayCreateGateways } from '../../lib/feature-checks'
+
+import { getGatewaysList } from '../../store/actions/gateways'
 import {
   selectGateways,
   selectGatewaysTotalCount,
   selectGatewaysFetching,
   selectGatewaysError,
 } from '../../store/selectors/gateways'
-import { checkFromState, mayCreateGateways } from '../../lib/feature-checks'
+
+import FetchTable from '../fetch-table'
 
 const headers = [
   {

@@ -15,6 +15,7 @@
 import React from 'react'
 
 import Events from '../../../components/events'
+
 import PropTypes from '../../../lib/prop-types'
 
 const { Widget } = Events

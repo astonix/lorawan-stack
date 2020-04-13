@@ -17,15 +17,17 @@ import React, { Component } from 'react'
 import bind from 'autobind-decorator'
 import classnames from 'classnames'
 import { defineMessages } from 'react-intl'
+
+import Message from '../../../lib/components/message'
+
 import PropTypes from '../../../lib/prop-types'
 
 import Button from '../../button'
 import Icon from '../../icon'
-import Message from '../../../lib/components/message'
+
 import SideNavigationList from './list'
 import SideNavigationItem from './item'
 import SideNavigationContext from './context'
-
 import style from './side.styl'
 
 const m = defineMessages({

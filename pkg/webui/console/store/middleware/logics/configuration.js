@@ -12,9 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import * as configuration from '../../actions/configuration'
 import api from '../../../api'
 
+import * as configuration from '../../actions/configuration'
 import { selectNsFrequencyPlans, selectGsFrequencyPlans } from '../../selectors/configuration'
 
 import createRequestLogic from './lib'

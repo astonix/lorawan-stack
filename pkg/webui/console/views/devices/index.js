@@ -16,18 +16,21 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 
-import DeviceList from '../device-list'
-import DeviceAdd from '../device-add'
-import DeviceImport from '../device-import'
-import Device from '../device'
-
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewApplicationDevices } from '../../lib/feature-checks'
-import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import PropTypes from '../../../lib/prop-types'
+
+import { selectSelectedApplicationId } from '../../store/selectors/applications'
+
+import Device from '../device'
+import DeviceImport from '../device-import'
+import DeviceAdd from '../device-add'
+import DeviceList from '../device-list'
 
 @connect(state => ({ appId: selectSelectedApplicationId(state) }))
 @withFeatureRequirement(mayViewApplicationDevices, {

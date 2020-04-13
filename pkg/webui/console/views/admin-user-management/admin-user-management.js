@@ -15,11 +15,13 @@
 import React, { Component } from 'react'
 import { Container, Col, Row } from 'react-grid-system'
 
+import PAGE_SIZES from '../../constants/page-sizes'
+
 import UsersTable from '../../containers/users-table'
-import sharedMessages from '../../../lib/shared-messages'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 
-import PAGE_SIZES from '../../constants/page-sizes'
+import sharedMessages from '../../../lib/shared-messages'
 
 export default class UserManagement extends Component {
   render() {

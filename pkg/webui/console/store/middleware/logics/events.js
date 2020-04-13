@@ -15,6 +15,10 @@
 import { createLogic } from 'redux-logic'
 
 import CONNECTION_STATUS from '../../../constants/connection-status'
+
+import { isUnauthenticatedError } from '../../../../lib/errors/utils'
+import { getCombinedDeviceId } from '../../../../lib/selectors/id'
+
 import {
   createStartEventsStreamActionType,
   createStopEventsStreamActionType,
@@ -27,8 +31,7 @@ import {
   stopEventsStream,
 } from '../../actions/events'
 import { createEventsStatusSelector } from '../../selectors/events'
-import { isUnauthenticatedError } from '../../../../lib/errors/utils'
-import { getCombinedDeviceId } from '../../../../lib/selectors/id'
+
 import user from './user'
 
 /**

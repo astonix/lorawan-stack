@@ -14,20 +14,21 @@
 
 import React, { Component } from 'react'
 
-import sharedMessages from '../../../lib/shared-messages'
 import Message from '../../../lib/components/message'
+
+import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
+import { checkFromState, mayCreateOrganizations } from '../../lib/feature-checks'
 
-import FetchTable from '../fetch-table'
-
-import { getOrganizationsList } from '../../../console/store/actions/organizations'
 import {
   selectOrganizations,
   selectOrganizationsTotalCount,
   selectOrganizationsFetching,
   selectOrganizationsError,
 } from '../../store/selectors/organizations'
-import { checkFromState, mayCreateOrganizations } from '../../lib/feature-checks'
+import { getOrganizationsList } from '../../store/actions/organizations'
+
+import FetchTable from '../fetch-table'
 
 const headers = [
   {

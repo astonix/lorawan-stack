@@ -17,16 +17,20 @@ import * as Yup from 'yup'
 import { defineMessages } from 'react-intl'
 import bind from 'autobind-decorator'
 
+import { dict as componentDict } from '../../../constants/components'
+
 import Form from '../../../components/form'
-import DeviceTemplateFormatSelect from '../../containers/device-template-format-select'
 import FileInput from '../../../components/file-input'
 import Checkbox from '../../../components/checkbox'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
-import sharedMessages from '../../../lib/shared-messages'
+
+import DeviceTemplateFormatSelect from '../../containers/device-template-format-select'
+
 import Message from '../../../lib/components/message'
+
+import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
-import { dict as componentDict } from '../../../constants/components'
 
 import style from './device-import-form.styl'
 

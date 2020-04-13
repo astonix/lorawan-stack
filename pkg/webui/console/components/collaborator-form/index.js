@@ -16,20 +16,22 @@ import React, { Component } from 'react'
 import * as Yup from 'yup'
 import bind from 'autobind-decorator'
 
-import sharedMessages from '../../../lib/shared-messages'
-import PropTypes from '../../../lib/prop-types'
-import { getCollaboratorId } from '../../../lib/selectors/id'
-import { id as collaboratorIdRegexp } from '../../lib/regexp'
-
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import Radio from '../../../components/radio-button'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
-import Message from '../../../lib/components/message'
 import toast from '../../../components/toast'
 import ModalButton from '../../../components/button/modal-button'
-import RightsGroup from '../../components/rights-group'
+
+import Message from '../../../lib/components/message'
+
+import { id as collaboratorIdRegexp } from '../../lib/regexp'
+import { getCollaboratorId } from '../../../lib/selectors/id'
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
+
+import RightsGroup from '../rights-group'
 
 const validationSchema = Yup.object().shape({
   collaborator_id: Yup.string()

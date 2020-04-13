@@ -21,18 +21,22 @@ import Input from '../../../components/input'
 import Checkbox from '../../../components/checkbox'
 import Radio from '../../../components/radio-button'
 import Select from '../../../components/select'
-import Message from '../../../lib/components/message'
 import SubmitBar from '../../../components/submit-bar'
+
 import { NsFrequencyPlansSelect } from '../../containers/freq-plans-select'
 import DevAddrInput from '../../containers/dev-addr-input'
 import JoinEUIPrefixesInput from '../../containers/join-eui-prefixes-input'
+
+import Message from '../../../lib/components/message'
 
 import randomByteString from '../../lib/random-bytes'
 import sharedMessages from '../../../lib/shared-messages'
 import { selectNsConfig, selectJsConfig, selectAsConfig } from '../../../lib/selectors/env'
 import errorMessages from '../../../lib/errors/error-messages'
 import PropTypes from '../../../lib/prop-types'
+
 import m from './messages'
+
 import validationSchema from './validation-schema'
 
 const random16BytesString = () => randomByteString(32)

@@ -16,6 +16,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import WithAuth from '../../../lib/components/with-auth'
+
 import Overview from '../overview'
 import Applications from '../applications'
 import Gateways from '../gateways'

@@ -14,13 +14,15 @@
 
 import { createLogic } from 'redux-logic'
 import * as Sentry from '@sentry/browser'
-import * as user from '../../actions/user'
+
 import { error } from '../../../../lib/log'
 import {
   isUnauthenticatedError,
   isInvalidArgumentError,
   isUnknown,
 } from '../../../../lib/errors/utils'
+
+import * as user from '../../actions/user'
 
 const getResultActionFromType = function(typeString, status) {
   if (typeString instanceof Array) {

@@ -15,12 +15,15 @@
 import React from 'react'
 import classnames from 'classnames'
 import { defineMessages } from 'react-intl'
-import PropTypes from '../../lib/prop-types'
+
+import OfflineStatus from '../../containers/offline-status'
 
 import Message from '../../lib/components/message'
-import Button from '../../components/button'
-import Link from '../../components/link'
-import OfflineStatus from '../../containers/offline-status'
+
+import PropTypes from '../../lib/prop-types'
+
+import Button from '../button'
+import Link from '../link'
 
 import style from './footer.styl'
 

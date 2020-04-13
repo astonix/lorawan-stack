@@ -17,15 +17,16 @@ import { Container, Col, Row } from 'react-grid-system'
 import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
-import PropTypes from '../../../lib/prop-types'
+import api from '../../api'
+
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import PageTitle from '../../../components/page-title'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import PubsubForm from '../../components/pubsub-form'
 import toast from '../../../components/toast'
-import sharedMessages from '../../../lib/shared-messages'
 
-import api from '../../api'
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 
 const m = defineMessages({
   editPubsub: 'Edit PubSub',

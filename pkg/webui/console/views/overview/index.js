@@ -18,16 +18,26 @@ import { defineMessages } from 'react-intl'
 import bind from 'autobind-decorator'
 import { connect } from 'react-redux'
 
-import sharedMessages from '../../../lib/shared-messages'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import { withEnv } from '../../../lib/components/env'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import Message from '../../../lib/components/message'
 import Status from '../../../components/status'
 import Spinner from '../../../components/spinner'
 import Link from '../../../components/link'
+
+import Message from '../../../lib/components/message'
+import IntlHelmet from '../../../lib/components/intl-helmet'
+import { withEnv } from '../../../lib/components/env'
 import Animation from '../../../lib/components/animation'
+
+import sharedMessages from '../../../lib/shared-messages'
+import {
+  mayViewApplications,
+  mayViewGateways,
+  mayCreateApplications,
+  mayCreateGateways,
+} from '../../lib/feature-checks'
+import PropTypes from '../../../lib/prop-types'
+
 import { selectApplicationsTotalCount } from '../../store/selectors/applications'
 import { getApplicationsList, GET_APPS_LIST_BASE } from '../../store/actions/applications'
 import { selectGatewaysTotalCount } from '../../store/selectors/gateways'
@@ -35,18 +45,10 @@ import { getGatewaysList, GET_GTWS_LIST_BASE } from '../../store/actions/gateway
 import { createFetchingSelector } from '../../store/selectors/fetching'
 import { selectUserId, selectUserRights } from '../../store/selectors/user'
 
-import {
-  mayViewApplications,
-  mayViewGateways,
-  mayCreateApplications,
-  mayCreateGateways,
-} from '../../lib/feature-checks'
-
 import ServerIcon from '../../../assets/auxiliary-icons/server.svg'
 import AppAnimation from '../../../assets/animations/illustrations/app.json'
 import GatewayAnimation from '../../../assets/animations/illustrations/gateway.json'
 
-import PropTypes from '../../../lib/prop-types'
 import style from './overview.styl'
 
 const m = defineMessages({

@@ -14,21 +14,23 @@
 
 import React, { Component } from 'react'
 
-import sharedMessages from '../../../lib/shared-messages'
-import Message from '../../../lib/components/message'
-import PropTypes from '../../../lib/prop-types'
 import Status from '../../../components/status'
 import Icon from '../../../components/icon'
 
-import FetchTable from '../fetch-table'
+import Message from '../../../lib/components/message'
 
-import { getUsersList } from '../../../console/store/actions/users'
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
+
 import {
   selectUsers,
   selectUsersTotalCount,
   selectUsersFetching,
   selectUsersError,
 } from '../../store/selectors/users'
+import { getUsersList } from '../../store/actions/users'
+
+import FetchTable from '../fetch-table'
 
 import style from './users-table.styl'
 

@@ -15,12 +15,13 @@
 import React from 'react'
 import { Row, Col, Container } from 'react-grid-system'
 
-import sharedMessages from '../../../lib/shared-messages'
-import IntlHelmet from '../../../lib/components/intl-helmet'
+import PAGE_SIZES from '../../constants/page-sizes'
 
 import ApplicationsTable from '../../containers/applications-table'
 
-import PAGE_SIZES from '../../constants/page-sizes'
+import IntlHelmet from '../../../lib/components/intl-helmet'
+
+import sharedMessages from '../../../lib/shared-messages'
 
 export default class List extends React.Component {
   render() {

@@ -15,6 +15,7 @@
 import { mergeWith } from 'lodash'
 
 import { getCombinedDeviceId, combineDeviceIds } from '../../../lib/selectors/id'
+
 import {
   GET_DEV,
   GET_DEVICES_LIST_SUCCESS,

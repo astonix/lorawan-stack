@@ -15,10 +15,11 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import Message from '../../../lib/components/message'
+
 import PropTypes from '../../../lib/prop-types'
 
 import Icon from '../../icon'
-import Message from '../../../lib/components/message'
 
 import style from './step.styl'
 

@@ -15,17 +15,18 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import OrganizationsList from '../organizations-list'
-import OrganizationAdd from '../organization-add'
-import Organization from '../organization'
-
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewOrganizationsOfUser } from '../../lib/feature-checks'
 import PropTypes from '../../../lib/prop-types'
+
+import Organization from '../organization'
+import OrganizationAdd from '../organization-add'
+import OrganizationsList from '../organizations-list'
 
 @withFeatureRequirement(mayViewOrganizationsOfUser, { redirect: '/' })
 @withBreadcrumb('orgs', function(props) {

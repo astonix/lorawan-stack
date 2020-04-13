@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { getGatewayId } from '../../../lib/selectors/id'
+
 import {
   GET_GTW,
   GET_GTW_SUCCESS,

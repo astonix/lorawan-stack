@@ -16,15 +16,17 @@ import React, { useState, useCallback } from 'react'
 import classnames from 'classnames'
 
 import Logo from '../../containers/logo'
+
+import PropTypes from '../../lib/prop-types'
+
+import Icon from '../icon'
 import NavigationBar from '../navigation/bar'
 import ProfileDropdown from '../profile-dropdown'
 import MobileMenu from '../mobile-menu'
 import Input from '../input'
-import PropTypes from '../../lib/prop-types'
-import Icon from '../../components/icon'
-
 import hamburgerMenuNormal from '../../assets/misc/hamburger-menu-normal.svg'
 import hamburgerMenuClose from '../../assets/misc/hamburger-menu-close.svg'
+
 import style from './header.styl'
 
 const Header = function({

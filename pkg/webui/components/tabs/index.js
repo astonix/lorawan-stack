@@ -15,11 +15,13 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import PropTypes from '../../lib/prop-types'
 import Message from '../../lib/components/message'
-import Icon from '../icon'
-import Tab from './tab'
 
+import PropTypes from '../../lib/prop-types'
+
+import Icon from '../icon'
+
+import Tab from './tab'
 import style from './tabs.styl'
 
 const Tabs = function({ className, active, tabs, onTabChange, divider, narrow }) {

@@ -18,9 +18,11 @@ import classnames from 'classnames'
 import clipboard from 'clipboard'
 import { defineMessages, injectIntl } from 'react-intl'
 
-import Icon from '../icon'
 import Message from '../../lib/components/message'
+
 import PropTypes from '../../lib/prop-types'
+
+import Icon from '../icon'
 
 import style from './safe-inspector.styl'
 

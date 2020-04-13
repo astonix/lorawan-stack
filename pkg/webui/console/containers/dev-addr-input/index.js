@@ -15,9 +15,10 @@
 import React from 'react'
 import { defineMessages } from 'react-intl'
 
+import Field from '../../../components/form/field'
+
 import PropTypes from '../../../lib/prop-types'
 
-import Field from '../../../components/form/field'
 import DevAddrInput from './dev-addr-input'
 import connect from './connect'
 

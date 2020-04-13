@@ -18,21 +18,25 @@ import { connect } from 'react-redux'
 import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
-import sharedMessages from '../../../lib/shared-messages'
-import PropTypes from '../../../lib/prop-types'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import ErrorView from '../../../lib/components/error-view'
-import SubViewError from '../error/sub-view'
-import Message from '../../../lib/components/message'
 import DataSheet from '../../../components/data-sheet'
 import Button from '../../../components/button'
-import api from '../../api'
+
+import Message from '../../../lib/components/message'
+import ErrorView from '../../../lib/components/error-view'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
-import { selectSelectedApplicationId } from '../../store/selectors/applications'
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewMqttConnectionInfo } from '../../lib/feature-checks'
+
+import { selectSelectedApplicationId } from '../../store/selectors/applications'
+
+import SubViewError from '../error/sub-view'
 
 import style from './application-integrations-mqtt.styl'
 

@@ -16,20 +16,23 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import ErrorView from '../../../lib/components/error-view'
-import SubViewError from '../error/sub-view'
 import NotFoundRoute from '../../../lib/components/not-found-route'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-import ApplicationCollaboratorsList from '../application-collaborators-list'
-import ApplicationCollaboratorAdd from '../application-collaborator-add'
-import ApplicationCollaboratorEdit from '../application-collaborator-edit'
 
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewOrEditApplicationCollaborators } from '../../lib/feature-checks'
-import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import PropTypes from '../../../lib/prop-types'
+
+import { selectSelectedApplicationId } from '../../store/selectors/applications'
+
+import ApplicationCollaboratorsList from '../application-collaborators-list'
+import ApplicationCollaboratorEdit from '../application-collaborator-edit'
+import SubViewError from '../error/sub-view'
+import ApplicationCollaboratorAdd from '../application-collaborator-add'
 
 @connect(state => ({ appId: selectSelectedApplicationId(state) }))
 @withFeatureRequirement(mayViewOrEditApplicationCollaborators, {

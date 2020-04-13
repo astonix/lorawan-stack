@@ -15,13 +15,6 @@
 import { combineReducers } from 'redux'
 import { connectRouter } from 'connected-react-router'
 
-import { SHARED_NAME as APPLICATION_SHARED_NAME } from '../actions/applications'
-import { SHARED_NAME as GATEWAY_SHARED_NAME } from '../actions/gateways'
-import { SHARED_NAME as ORGANIZATION_SHARED_NAME } from '../actions/organizations'
-import { SHARED_NAME as DEVICE_SHARED_NAME } from '../actions/devices'
-import { SHARED_NAME as USER_SHARED_NAME } from '../actions/users'
-import { SHARED_NAME as API_KEYS_SHARED_NAME } from '../actions/api-keys'
-import { SHARED_NAME as COLLABORATORS_SHARED_NAME } from '../actions/collaborators'
 import {
   getUserId,
   getApplicationId,
@@ -31,6 +24,15 @@ import {
   getApiKeyId,
   getCollaboratorId,
 } from '../../../lib/selectors/id'
+
+import { SHARED_NAME as APPLICATION_SHARED_NAME } from '../actions/applications'
+import { SHARED_NAME as GATEWAY_SHARED_NAME } from '../actions/gateways'
+import { SHARED_NAME as ORGANIZATION_SHARED_NAME } from '../actions/organizations'
+import { SHARED_NAME as DEVICE_SHARED_NAME } from '../actions/devices'
+import { SHARED_NAME as USER_SHARED_NAME } from '../actions/users'
+import { SHARED_NAME as API_KEYS_SHARED_NAME } from '../actions/api-keys'
+import { SHARED_NAME as COLLABORATORS_SHARED_NAME } from '../actions/collaborators'
+
 import user from './user'
 import users from './users'
 import init from './init'

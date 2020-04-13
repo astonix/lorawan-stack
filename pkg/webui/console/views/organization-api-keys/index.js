@@ -16,20 +16,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import ErrorView from '../../../lib/components/error-view'
+import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
+import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
+import { mayViewOrEditOrganizationApiKeys } from '../../lib/feature-checks'
+
+import { selectSelectedOrganizationId } from '../../store/selectors/organizations'
 
 import SubViewError from '../error/sub-view'
 import OrganizationApiKeysList from '../organization-api-keys-list'
 import OrganizationApiKeyAdd from '../organization-api-key-add'
 import OrganizationApiKeyEdit from '../organization-api-key-edit'
-import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-
-import { mayViewOrEditOrganizationApiKeys } from '../../lib/feature-checks'
-import { selectSelectedOrganizationId } from '../../store/selectors/organizations'
 
 @connect(state => ({ orgId: selectSelectedOrganizationId(state) }))
 @withFeatureRequirement(mayViewOrEditOrganizationApiKeys, {

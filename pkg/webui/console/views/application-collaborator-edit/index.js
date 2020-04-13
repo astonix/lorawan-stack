@@ -18,13 +18,18 @@ import bind from 'autobind-decorator'
 import { Container, Col, Row } from 'react-grid-system'
 import { replace } from 'connected-react-router'
 
+import api from '../../api'
+
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import PageTitle from '../../../components/page-title'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
-import sharedMessages from '../../../lib/shared-messages'
 import CollaboratorForm from '../../components/collaborator-form'
 import toast from '../../../components/toast'
+
 import withRequest from '../../../lib/components/with-request'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { getCollaborator } from '../../store/actions/collaborators'
 import {
@@ -40,8 +45,6 @@ import {
   selectCollaboratorFetching,
   selectCollaboratorError,
 } from '../../store/selectors/collaborators'
-import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
 
 const isUser = collaborator => collaborator.ids && 'user_ids' in collaborator.ids
 

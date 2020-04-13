@@ -18,15 +18,15 @@ import bind from 'autobind-decorator'
 
 import PropTypes from '../../../lib/prop-types'
 import { getApplicationId, getDeviceId, combineDeviceIds } from '../../../lib/selectors/id'
-import EventsSubscription from '../../containers/events-subscription'
 
 import { clearDeviceEventsStream, startDeviceEventsStream } from '../../store/actions/devices'
-
 import {
   selectDeviceEvents,
   selectDeviceEventsStatus,
   selectDeviceEventsError,
 } from '../../store/selectors/devices'
+
+import EventsSubscription from '../events-subscription'
 
 @connect(
   null,

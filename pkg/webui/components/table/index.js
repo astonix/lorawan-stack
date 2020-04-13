@@ -21,8 +21,8 @@ import getByPath from '../../lib/get-by-path'
 
 import Overlay from '../overlay'
 import Pagination from '../pagination'
-import Table from './table'
 
+import Table from './table'
 import style from './tabular.styl'
 
 @bind

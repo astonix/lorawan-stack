@@ -16,11 +16,14 @@ import React from 'react'
 import classnames from 'classnames'
 import bind from 'autobind-decorator'
 
+import withComputedProps from '../../lib/components/with-computed-props'
+
+import PropTypes from '../../lib/prop-types'
+
 import Select from '../select'
 import Input from '../input'
 import { unit as unitRegexp } from '../../console/lib/regexp'
-import PropTypes from '../../lib/prop-types'
-import withComputedProps from '../../lib/components/with-computed-props'
+
 import style from './unit-input.styl'
 
 @withComputedProps(props => ({

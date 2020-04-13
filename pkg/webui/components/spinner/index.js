@@ -18,6 +18,7 @@ import bind from 'autobind-decorator'
 import PropTypes from 'prop-types'
 
 import from from '../../lib/from'
+
 import style from './spinner.styl'
 
 const id = () => `grad-${Math.round(Math.random() * 10000)}`

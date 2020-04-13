@@ -19,20 +19,18 @@ import { connect } from 'react-redux'
 import { Col, Row, Container } from 'react-grid-system'
 import bind from 'autobind-decorator'
 
-import sharedMessages from '../../../lib/shared-messages'
-import diff from '../../../lib/diff'
-import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
-import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import getHostnameFromUrl from '../../../lib/host-from-url'
-import PropTypes from '../../../lib/prop-types'
-import toast from '../../../components/toast'
 import api from '../../api'
 
-import { updateDevice } from '../../store/actions/devices'
-import { attachPromise } from '../../store/actions/lib'
-import { selectSelectedApplicationId } from '../../store/selectors/applications'
-import { selectSelectedDevice, selectSelectedDeviceId } from '../../store/selectors/devices'
+import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
+import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+import toast from '../../../components/toast'
+
+import IntlHelmet from '../../../lib/components/intl-helmet'
+
+import sharedMessages from '../../../lib/shared-messages'
+import diff from '../../../lib/diff'
+import getHostnameFromUrl from '../../../lib/host-from-url'
+import PropTypes from '../../../lib/prop-types'
 import {
   selectIsConfig,
   selectAsConfig,
@@ -44,15 +42,19 @@ import {
   mayReadApplicationDeviceKeys,
 } from '../../lib/feature-checks'
 
-import { isDeviceOTAA, isDeviceJoined } from './utils'
+import { updateDevice } from '../../store/actions/devices'
+import { attachPromise } from '../../store/actions/lib'
+import { selectSelectedApplicationId } from '../../store/selectors/applications'
+import { selectSelectedDevice, selectSelectedDeviceId } from '../../store/selectors/devices'
+
 import m from './messages'
 
+import { isDeviceOTAA, isDeviceJoined } from './utils'
 import IdentityServerForm from './identity-server-form'
 import ApplicationServerForm from './application-server-form'
 import JoinServerForm from './join-server-form'
 import NetworkServerForm from './network-server-form'
 import Collapse from './collapse'
-
 import style from './device-general-settings.styl'
 
 @connect(

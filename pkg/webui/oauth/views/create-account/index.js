@@ -23,17 +23,20 @@ import * as Yup from 'yup'
 import queryString from 'query-string'
 
 import api from '../../api'
-import sharedMessages from '../../../lib/shared-messages'
-import PropTypes from '../../../lib/prop-types'
-import { id as userRegexp } from '../../../lib/regexp'
+
 import Button from '../../../components/button'
 import Input from '../../../components/input'
 import Form from '../../../components/form'
 import SubmitButton from '../../../components/submit-button'
-import Message from '../../../lib/components/message'
-import { selectApplicationSiteName } from '../../../lib/selectors/env'
-import IntlHelmet from '../../../lib/components/intl-helmet'
 import Spinner from '../../../components/spinner'
+
+import Message from '../../../lib/components/message'
+import IntlHelmet from '../../../lib/components/intl-helmet'
+
+import { selectApplicationSiteName } from '../../../lib/selectors/env'
+import { id as userRegexp } from '../../../lib/regexp'
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 
 import style from './create-account.styl'
 

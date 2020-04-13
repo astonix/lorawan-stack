@@ -17,9 +17,10 @@ import bind from 'autobind-decorator'
 import classnames from 'classnames'
 
 import Message from '../../lib/components/message'
-import PropTypes from '../../lib/prop-types'
-import { RadioGroupContext } from './group'
 
+import PropTypes from '../../lib/prop-types'
+
+import { RadioGroupContext } from './group'
 import style from './radio-button.styl'
 
 @bind

@@ -15,6 +15,7 @@
 import { createLogic } from 'redux-logic'
 
 import api from '../../api'
+
 import * as user from '../actions/user'
 
 const userLogic = createLogic({

@@ -15,6 +15,7 @@
 import React from 'react'
 
 import PropTypes from '../../lib/prop-types'
+
 import Button from '../button'
 
 class SubmitButton extends React.PureComponent {

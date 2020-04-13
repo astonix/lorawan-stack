@@ -16,8 +16,10 @@ import React from 'react'
 import classnames from 'classnames'
 import bind from 'autobind-decorator'
 
-import PropTypes from '../../../lib/prop-types'
 import Message from '../../../lib/components/message'
+
+import PropTypes from '../../../lib/prop-types'
+
 import Icon from '../../icon'
 
 import style from './sort-button.styl'

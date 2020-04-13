@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import { getUserId } from '../../../lib/selectors/id'
+
 import {
   GET_USERS_LIST_SUCCESS,
   GET_USER_SUCCESS,

@@ -17,6 +17,8 @@ import { replace } from 'connected-react-router'
 
 import withRequest from '../../../lib/components/with-request'
 
+import { getWebhookTemplateId } from '../../../lib/selectors/id'
+
 import {
   selectSelectedWebhook,
   selectWebhookFetching,
@@ -26,7 +28,6 @@ import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import { selectWebhookTemplateById } from '../../store/selectors/webhook-templates'
 import { getWebhook, updateWebhook } from '../../store/actions/webhooks'
 import { attachPromise } from '../../store/actions/lib'
-import { getWebhookTemplateId } from '../../../lib/selectors/id'
 
 const webhookEntitySelector = [
   'base_url',

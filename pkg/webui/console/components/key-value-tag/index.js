@@ -15,6 +15,7 @@
 import React from 'react'
 
 import Icon from '../../../components/icon'
+
 import Message from '../../../lib/components/message'
 
 import PropTypes from '../../../lib/prop-types'

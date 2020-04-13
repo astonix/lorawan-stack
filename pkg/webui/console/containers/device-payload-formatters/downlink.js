@@ -16,14 +16,17 @@ import React from 'react'
 import bind from 'autobind-decorator'
 import { connect } from 'react-redux'
 
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
+import PAYLOAD_FORMATTER_TYPES from '../../constants/formatter-types'
+
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import PayloadFormattersForm from '../../components/payload-formatters-form'
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import PAYLOAD_FORMATTER_TYPES from '../../constants/formatter-types'
 import toast from '../../../components/toast'
+
+import IntlHelmet from '../../../lib/components/intl-helmet'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { updateDevice } from '../../store/actions/devices'
 import { attachPromise } from '../../store/actions/lib'

@@ -17,9 +17,9 @@ import * as Yup from 'yup'
 import randomByteString from '../../../lib/random-bytes'
 import sharedMessages from '../../../../lib/shared-messages'
 import { id as deviceIdRegexp, address as addressRegexp } from '../../../lib/regexp'
-import m from '../../../components/device-data-form/messages'
 import { selectJsConfig } from '../../../../lib/selectors/env'
 
+import m from '../../../components/device-data-form/messages'
 import { parseLorawanMacVersion } from '../utils'
 
 const jsConfig = selectJsConfig()

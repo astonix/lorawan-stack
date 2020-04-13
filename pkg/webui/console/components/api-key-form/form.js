@@ -16,6 +16,7 @@ import React from 'react'
 import bind from 'autobind-decorator'
 
 import Form from '../../../components/form'
+
 import PropTypes from '../../../lib/prop-types'
 
 @bind

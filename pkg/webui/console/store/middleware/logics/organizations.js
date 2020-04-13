@@ -13,8 +13,10 @@
 // limitations under the License.
 
 import api from '../../../api'
+
 import * as organizations from '../../actions/organizations'
 import { selectUserId } from '../../selectors/user'
+
 import createRequestLogic from './lib'
 import createEventsConnectLogics from './events'
 

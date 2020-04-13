@@ -18,11 +18,15 @@ import bind from 'autobind-decorator'
 import { connect } from 'react-redux'
 import { replace } from 'connected-react-router'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import sharedMessages from '../../../lib/shared-messages'
 import { ApiKeyCreateForm } from '../../components/api-key-form'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { getApplicationsRightsList } from '../../store/actions/applications'
 import {
@@ -32,9 +36,6 @@ import {
   selectApplicationRightsError,
   selectApplicationRightsFetching,
 } from '../../store/selectors/applications'
-
-import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
 
 @connect(
   state => ({

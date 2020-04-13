@@ -16,10 +16,12 @@ import React, { Component } from 'react'
 import { defineMessages } from 'react-intl'
 import bind from 'autobind-decorator'
 
-import PropTypes from '../../lib/prop-types'
 import Message from '../../lib/components/message'
-import Icon from '../../components/icon'
-import Button from '../../components/button'
+
+import PropTypes from '../../lib/prop-types'
+
+import Icon from '../icon'
+import Button from '../button'
 
 import style from './file-input.styl'
 

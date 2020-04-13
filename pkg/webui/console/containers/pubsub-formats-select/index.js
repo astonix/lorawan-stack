@@ -14,13 +14,14 @@
 
 import { defineMessages } from 'react-intl'
 
-import CreateFetchSelect from '../fetch-select'
 import {
   selectPubsubFormats,
   selectPubsubFormatsError,
   selectPubsubFormatsFetching,
 } from '../../store/selectors/pubsub-formats'
 import { getPubsubFormats } from '../../store/actions/pubsub-formats'
+
+import CreateFetchSelect from '../fetch-select'
 
 const m = defineMessages({
   title: 'PubSub Format',

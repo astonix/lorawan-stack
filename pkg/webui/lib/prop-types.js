@@ -13,6 +13,7 @@
 // limitations under the License.
 
 import originalPropTypes from 'prop-types'
+
 import { components } from '../constants/components'
 
 const PropTypes = { ...originalPropTypes }

@@ -16,9 +16,10 @@ import React from 'react'
 import { Col, Row } from 'react-grid-system'
 import classnames from 'classnames'
 
-import PropTypes from '../../lib/prop-types'
 import IntlHelmet from '../../lib/components/intl-helmet'
 import Message from '../../lib/components/message'
+
+import PropTypes from '../../lib/prop-types'
 
 import style from './page-title.styl'
 

@@ -18,15 +18,19 @@ import { Container, Col, Row } from 'react-grid-system'
 import { Switch, Route, Redirect } from 'react-router'
 import { defineMessages } from 'react-intl'
 
-import sharedMessages from '../../../lib/shared-messages'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import Tab from '../../../components/tabs'
-import NotFoundRoute from '../../../lib/components/not-found-route'
 import Notification from '../../../components/notification'
 
 import DeviceUplinkPayloadFormatters from '../../containers/device-payload-formatters/uplink'
 import DeviceDownlinkPayloadFormatters from '../../containers/device-payload-formatters/downlink'
+
+import NotFoundRoute from '../../../lib/components/not-found-route'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
+
 import {
   selectApplicationIsLinked,
   selectApplicationLink,
@@ -35,7 +39,6 @@ import {
 } from '../../store/selectors/applications'
 import { selectSelectedDeviceId } from '../../store/selectors/devices'
 
-import PropTypes from '../../../lib/prop-types'
 import style from './device-payload-formatters.styl'
 
 const m = defineMessages({

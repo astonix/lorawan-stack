@@ -16,7 +16,7 @@ import React from 'react'
 import { withRouter } from 'react-router-dom'
 import * as Sentry from '@sentry/browser'
 
-import PropTypes from '../../lib/prop-types'
+import PropTypes from '../prop-types'
 
 @withRouter
 class ErrorView extends React.Component {

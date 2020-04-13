@@ -22,9 +22,10 @@ import Button from '../button'
 import SubmitBar from '../submit-bar'
 import SubmitButton from '../submit-button'
 import Input from '../input'
-import Form from '../form'
 import Checkbox from '../checkbox'
 import Radio from '../radio-button'
+
+import Form from '.'
 
 const handleSubmit = function(data, { resetForm }) {
   action('Submit')(data)

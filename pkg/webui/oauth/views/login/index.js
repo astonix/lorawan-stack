@@ -22,17 +22,20 @@ import { connect } from 'react-redux'
 import * as Yup from 'yup'
 
 import api from '../../api'
-import sharedMessages from '../../../lib/shared-messages'
-import { selectApplicationRootPath, selectApplicationSiteName } from '../../../lib/selectors/env'
-import PropTypes from '../../../lib/prop-types'
 
 import Button from '../../../components/button'
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import SubmitButton from '../../../components/submit-button'
+
 import Logo from '../../../containers/logo'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import Message from '../../../lib/components/message'
+
+import PropTypes from '../../../lib/prop-types'
+import { selectApplicationRootPath, selectApplicationSiteName } from '../../../lib/selectors/env'
+import sharedMessages from '../../../lib/shared-messages'
 import { id as userRegexp } from '../../../lib/regexp'
 
 import style from './login.styl'

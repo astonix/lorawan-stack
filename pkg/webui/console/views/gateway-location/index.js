@@ -16,12 +16,14 @@ import React from 'react'
 import { Col, Row, Container } from 'react-grid-system'
 
 import PageTitle from '../../../components/page-title'
-import GatewayLocationForm from '../../containers/gateway-location-form'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-import sharedMessages from '../../../lib/shared-messages'
 
+import GatewayLocationForm from '../../containers/gateway-location-form'
+
+import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewOrEditGatewayLocation } from '../../lib/feature-checks'
 
 const GatewayLocation = () => {

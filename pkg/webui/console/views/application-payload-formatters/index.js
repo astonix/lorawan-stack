@@ -18,17 +18,19 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom'
 import { Container, Col, Row } from 'react-grid-system'
 import { defineMessages } from 'react-intl'
 
-import PropTypes from '../../../lib/prop-types'
-import Message from '../../../lib/components/message'
 import Notification from '../../../components/notification'
 import Spinner from '../../../components/spinner'
-import sharedMessages from '../../../lib/shared-messages'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
-import NotFoundRoute from '../../../lib/components/not-found-route'
 
 import ApplicationUplinkPayloadFormatters from '../../containers/application-payload-formatters/uplink'
 import ApplicationDownlinkPayloadFormatters from '../../containers/application-payload-formatters/downlink'
+
+import NotFoundRoute from '../../../lib/components/not-found-route'
+import Message from '../../../lib/components/message'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { getApplicationLink } from '../../store/actions/link'
 import {

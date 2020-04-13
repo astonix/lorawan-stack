@@ -18,17 +18,17 @@ import bind from 'autobind-decorator'
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import PubsubForm from '../../components/pubsub-form'
 
 import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { selectSelectedApplicationId } from '../../store/selectors/applications'
-
-import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
 
 @connect(
   state => ({

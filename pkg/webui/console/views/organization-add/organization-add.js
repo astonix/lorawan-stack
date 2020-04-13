@@ -22,11 +22,12 @@ import OrganizationForm from '../../components/organization-form'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
 import Form from '../../../components/form'
+
+import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
 import PropTypes from '../../../lib/prop-types'
 import sharedMessages from '../../../lib/shared-messages'
 import { getOrganizationId } from '../../../lib/selectors/id'
-import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-
 import { mayCreateOrganizations } from '../../lib/feature-checks'
 
 const initialValues = {

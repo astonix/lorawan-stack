@@ -19,15 +19,17 @@ import bind from 'autobind-decorator'
 import scrollIntoView from 'scroll-into-view-if-needed'
 import classnames from 'classnames'
 
+import PropTypes from '../../lib/prop-types'
+
 import Notification from '../notification'
 import ErrorNotification from '../error-notification'
-import PropTypes from '../../lib/prop-types'
+
 import FormContext from './context'
 import FormField from './field'
 import FormInfoField from './field/info'
 import FormSubmit from './submit'
-
 import style from './form.styl'
+
 class InnerForm extends React.PureComponent {
   static propTypes = {
     children: PropTypes.node.isRequired,

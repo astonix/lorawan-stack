@@ -13,9 +13,9 @@
 // limitations under the License.
 
 import { GET_USERS_LIST_BASE, GET_USER_BASE } from '../actions/users'
+
 import { createFetchingSelector } from './fetching'
 import { createErrorSelector } from './error'
-
 import {
   createPaginationIdsSelectorByEntity,
   createPaginationTotalCountSelectorByEntity,

@@ -21,14 +21,16 @@ import { connect } from 'react-redux'
 import * as Yup from 'yup'
 
 import api from '../../api'
-import sharedMessages from '../../../lib/shared-messages'
 
 import Button from '../../../components/button'
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import SubmitButton from '../../../components/submit-button'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import Message from '../../../lib/components/message'
+
+import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
 import { id as userRegexp } from '../../../lib/regexp'
 

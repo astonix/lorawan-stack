@@ -18,19 +18,23 @@ import { push } from 'connected-react-router'
 import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
+import api from '../../api'
+
 import CodeEditor from '../../../components/code-editor'
 import ProgressBar from '../../../components/progress-bar'
-import { selectSelectedApplicationId } from '../../store/selectors/applications'
-import { selectNsConfig, selectJsConfig, selectAsConfig } from '../../../lib/selectors/env'
 import DeviceImportForm from '../../components/device-import-form'
 import SubmitBar from '../../../components/submit-bar'
 import Button from '../../../components/button'
 import ErrorNotification from '../../../components/error-notification'
-import api from '../../api'
-import PropTypes from '../../../lib/prop-types'
-import Message from '../../../lib/components/message'
 import Status from '../../../components/status'
+
+import Message from '../../../lib/components/message'
+
+import PropTypes from '../../../lib/prop-types'
+import { selectNsConfig, selectJsConfig, selectAsConfig } from '../../../lib/selectors/env'
 import randomByteString from '../../lib/random-bytes'
+
+import { selectSelectedApplicationId } from '../../store/selectors/applications'
 
 import style from './device-importer.styl'
 

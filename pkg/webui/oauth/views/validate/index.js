@@ -18,12 +18,16 @@ import { defineMessages } from 'react-intl'
 import { push } from 'connected-react-router'
 import queryString from 'query-string'
 import { connect } from 'react-redux'
-import PropTypes from '../../../lib/prop-types'
+
+import api from '../../api'
+
 import Spinner from '../../../components/spinner'
-import Message from '../../../lib/components/message'
 import ErrorNotification from '../../../components/error-notification'
 import Notification from '../../../components/notification'
-import api from '../../api'
+
+import Message from '../../../lib/components/message'
+
+import PropTypes from '../../../lib/prop-types'
 import sharedMessages from '../../../lib/shared-messages'
 
 const m = defineMessages({

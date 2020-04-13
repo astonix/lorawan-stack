@@ -14,11 +14,14 @@
 
 import React from 'react'
 
-import Event from '../..'
 import Message from '../../../../lib/components/message'
-import Icon from '../../../icon'
+
 import PropTypes from '../../../../lib/prop-types'
 import { getEntityId } from '../../../../lib/selectors/id'
+
+import Icon from '../../../icon'
+import Event from '../..'
+
 import style from './error.styl'
 
 const ErrorEvent = function({ className, event, expandedClassName, overviewClassName, widget }) {

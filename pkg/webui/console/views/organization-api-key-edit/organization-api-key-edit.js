@@ -18,8 +18,8 @@ import { Container, Col, Row } from 'react-grid-system'
 import { ApiKeyEditForm } from '../../components/api-key-form'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
-
 import PageTitle from '../../../components/page-title'
+
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
 

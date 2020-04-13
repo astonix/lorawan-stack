@@ -13,6 +13,9 @@
 // limitations under the License.
 
 import CONNECTION_STATUS from '../../constants/connection-status'
+
+import { getCombinedDeviceId } from '../../../lib/selectors/id'
+
 import {
   createGetEventMessageSuccessActionType,
   createGetEventMessageFailureActionType,
@@ -22,8 +25,6 @@ import {
   createStopEventsStreamActionType,
   createClearEventsActionType,
 } from '../actions/events'
-
-import { getCombinedDeviceId } from '../../../lib/selectors/id'
 
 const defaultState = {
   events: [],

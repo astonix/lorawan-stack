@@ -13,7 +13,9 @@
 // limitations under the License.
 
 import ArrayBufferToString from 'arraybuffer-to-string'
+
 import Token from '../../util/token'
+
 import { notify, EVENTS } from './shared'
 import 'web-streams-polyfill/dist/polyfill.js'
 

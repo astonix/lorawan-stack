@@ -18,6 +18,7 @@ import { defineMessages } from 'react-intl'
 import PropTypes from '../../lib/prop-types'
 
 import Button from '../button'
+
 import Input from '.'
 
 const m = defineMessages({

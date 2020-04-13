@@ -19,6 +19,8 @@ import { connect } from 'react-redux'
 import { defineMessages } from 'react-intl'
 import * as Yup from 'yup'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
@@ -26,25 +28,22 @@ import Form from '../../../components/form'
 import Input from '../../../components/input'
 import Button from '../../../components/button'
 import SubmitButton from '../../../components/submit-button'
-import Message from '../../../lib/components/message'
 import DataSheet from '../../../components/data-sheet'
 import toast from '../../../components/toast'
-import DateTime from '../../../lib/components/date-time'
 import Icon from '../../../components/icon'
 import SubmitBar from '../../../components/submit-bar'
-import withRequest from '../../../lib/components/with-request'
 import Checkbox from '../../../components/checkbox'
+
+import withRequest from '../../../lib/components/with-request'
+import DateTime from '../../../lib/components/date-time'
+import Message from '../../../lib/components/message'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
 import { apiKey, address } from '../../lib/regexp'
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
+import { mayLinkApplication } from '../../lib/feature-checks'
 
-import {
-  getApplicationLink,
-  updateApplicationLinkSuccess,
-  deleteApplicationLinkSuccess,
-} from '../../store/actions/link'
 import {
   selectApplicationIsLinked,
   selectApplicationLink,
@@ -53,9 +52,11 @@ import {
   selectApplicationLinkError,
   selectSelectedApplicationId,
 } from '../../store/selectors/applications'
-import { mayLinkApplication } from '../../lib/feature-checks'
-
-import api from '../../api'
+import {
+  getApplicationLink,
+  updateApplicationLinkSuccess,
+  deleteApplicationLinkSuccess,
+} from '../../store/actions/link'
 
 import style from './application-link.styl'
 

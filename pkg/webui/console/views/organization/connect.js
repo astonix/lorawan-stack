@@ -14,6 +14,8 @@
 
 import { connect } from 'react-redux'
 
+import withRequest from '../../../lib/components/with-request'
+
 import {
   selectSelectedOrganization,
   selectOrganizationFetching,
@@ -27,8 +29,6 @@ import {
   stopOrganizationEventsStream,
   getOrganizationsRightsList,
 } from '../../store/actions/organizations'
-
-import withRequest from '../../../lib/components/with-request'
 
 const mapStateToProps = (state, props) => ({
   orgId: props.match.params.orgId,

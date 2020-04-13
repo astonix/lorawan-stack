@@ -15,17 +15,18 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import GatewaysList from '../gateways-list'
-import GatewayAdd from '../gateway-add'
-import Gateway from '../gateway'
-
-import sharedMessages from '../../../lib/shared-messages'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewGateways } from '../../lib/feature-checks'
 import PropTypes from '../../../lib/prop-types'
+
+import Gateway from '../gateway'
+import GatewayAdd from '../gateway-add'
+import GatewaysList from '../gateways-list'
 
 @withFeatureRequirement(mayViewGateways, { redirect: '/' })
 @withBreadcrumb('gateways', function(props) {

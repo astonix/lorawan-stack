@@ -21,6 +21,7 @@ import NavigationBar from '../navigation/bar'
 import Logo from '../logo'
 import TtsLogo from '../../assets/static/logo.svg'
 import ExampleLogo from '../logo/story-logo.svg'
+
 import Header from '.'
 
 const user = {

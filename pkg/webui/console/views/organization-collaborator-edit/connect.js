@@ -15,6 +15,8 @@
 import { connect } from 'react-redux'
 import { replace } from 'connected-react-router'
 
+import api from '../../api'
+
 import withRequest from '../../../lib/components/with-request'
 
 import { getCollaborator } from '../../store/actions/collaborators'
@@ -31,8 +33,6 @@ import {
   selectCollaboratorFetching,
   selectCollaboratorError,
 } from '../../store/selectors/collaborators'
-
-import api from '../../api'
 
 export default OrganizationCollaboratorEdit =>
   connect(

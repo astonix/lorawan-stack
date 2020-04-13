@@ -15,9 +15,10 @@
 import React from 'react'
 
 import Spinner from '../../components/spinner'
-import Message from '../../lib/components/message'
 
-import sharedMessages from '../../lib/shared-messages'
+import sharedMessages from '../shared-messages'
+
+import Message from './message'
 
 /**
  * `withRequest` is a HOC that handles:

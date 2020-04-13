@@ -14,8 +14,9 @@
 
 import React from 'react'
 
-import FormContext from '../context'
 import PropTypes from '../../../lib/prop-types'
+
+import FormContext from '../context'
 
 class FormSubmit extends React.Component {
   static contextType = FormContext

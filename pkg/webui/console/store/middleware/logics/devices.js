@@ -13,8 +13,10 @@
 // limitations under the License.
 
 import api from '../../../api'
+
 import * as devices from '../../actions/devices'
 import * as deviceTemplateFormats from '../../actions/device-template-formats'
+
 import createEventsConnectLogics from './events'
 import createRequestLogic from './lib'
 

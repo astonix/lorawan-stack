@@ -16,9 +16,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import Message from '../message'
-
 import PropTypes from '../../prop-types'
-
 import { toMessageProps } from '../../errors/utils'
 
 import style from './error-message.styl'

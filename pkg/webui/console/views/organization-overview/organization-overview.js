@@ -15,19 +15,21 @@
 import React from 'react'
 import { Col, Row, Container } from 'react-grid-system'
 
-import sharedMessages from '../../../lib/shared-messages'
-import DateTime from '../../../lib/components/date-time'
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import PropTypes from '../../../lib/prop-types'
-import OrganizationEvents from '../../containers/organization-events'
 import DataSheet from '../../../components/data-sheet'
 import EntityTitleSection from '../../components/entity-title-section'
 import KeyValueTag from '../../components/key-value-tag'
 import Spinner from '../../../components/spinner'
+
+import OrganizationEvents from '../../containers/organization-events'
+
+import IntlHelmet from '../../../lib/components/intl-helmet'
+import DateTime from '../../../lib/components/date-time'
 import Message from '../../../lib/components/message'
 import withRequest from '../../../lib/components/with-request'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import PropTypes from '../../../lib/prop-types'
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewOrganizationInformation } from '../../lib/feature-checks'
 
 @withFeatureRequirement(mayViewOrganizationInformation, {

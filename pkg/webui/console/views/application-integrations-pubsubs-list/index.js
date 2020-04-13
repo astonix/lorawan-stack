@@ -15,12 +15,13 @@
 import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-grid-system'
 
+import PAGE_SIZES from '../../constants/page-sizes'
+
 import PubsubsTable from '../../containers/pubsubs-table'
 
 import IntlHelmet from '../../../lib/components/intl-helmet'
-import sharedMessages from '../../../lib/shared-messages'
 
-import PAGE_SIZES from '../../constants/page-sizes'
+import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
 
 export default class ApplicationPubsubsList extends Component {

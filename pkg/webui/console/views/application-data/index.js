@@ -18,16 +18,19 @@ import { defineMessages } from 'react-intl'
 import { Container, Col, Row } from 'react-grid-system'
 
 import PageTitle from '../../../components/page-title'
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import ApplicationEvents from '../../containers/application-events'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewApplicationEvents } from '../../lib/feature-checks'
+import PropTypes from '../../../lib/prop-types'
+
 import { selectSelectedApplicationId } from '../../store/selectors/applications'
 
-import PropTypes from '../../../lib/prop-types'
 import style from './application-data.styl'
 
 const m = defineMessages({

@@ -20,14 +20,16 @@ import { replace } from 'connected-react-router'
 import bind from 'autobind-decorator'
 
 import api from '../../api'
-import sharedMessages from '../../../lib/shared-messages'
 
-import ErrorMessage from '../../../lib/components/error-message'
 import Modal from '../../../components/modal'
 import Icon from '../../../components/icon'
+
+import ErrorMessage from '../../../lib/components/error-message'
 import Message from '../../../lib/components/message'
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import { withEnv } from '../../../lib/components/env'
+
+import sharedMessages from '../../../lib/shared-messages'
 import getCookieValue from '../../../lib/cookie'
 
 import style from './authorize.styl'

@@ -19,18 +19,21 @@ import { Container, Col, Row } from 'react-grid-system'
 import bind from 'autobind-decorator'
 import { push } from 'connected-react-router'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import FormSubmit from '../../../components/form/submit'
 import SubmitButton from '../../../components/submit-button'
 import GatewayDataForm from '../../components/gateway-data-form'
-import sharedMessages from '../../../lib/shared-messages'
-import PropTypes from '../../../lib/prop-types'
+
 import { withEnv } from '../../../lib/components/env'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
-import api from '../../api'
-import { selectUserId } from '../../store/selectors/user'
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 import { mayCreateGateways } from '../../lib/feature-checks'
+
+import { selectUserId } from '../../store/selectors/user'
 
 const m = defineMessages({
   createGateway: 'Create Gateway',

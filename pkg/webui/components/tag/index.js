@@ -16,6 +16,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import PropTypes from '../../lib/prop-types'
+
 import style from './tag.styl'
 
 const Tag = function(props) {

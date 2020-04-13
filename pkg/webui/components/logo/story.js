@@ -16,7 +16,9 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import TtsLogo from '../../assets/static/logo.svg'
+
 import ExampleLogo from './story-logo.svg'
+
 import Logo from '.'
 
 storiesOf('Logo', module)

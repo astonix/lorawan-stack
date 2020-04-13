@@ -16,19 +16,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import ErrorView from '../../../lib/components/error-view'
-import SubViewError from '../error/sub-view'
-import ApplicationPubsubsList from '../application-integrations-pubsubs-list'
-import ApplicationPubsubAdd from '../application-integrations-pubsub-add'
-import ApplicationPubsubEdit from '../application-integrations-pubsub-edit'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewApplicationEvents } from '../../lib/feature-checks'
-import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import PropTypes from '../../../lib/prop-types'
+
+import { selectSelectedApplicationId } from '../../store/selectors/applications'
+
+import ApplicationPubsubEdit from '../application-integrations-pubsub-edit'
+import ApplicationPubsubAdd from '../application-integrations-pubsub-add'
+import ApplicationPubsubsList from '../application-integrations-pubsubs-list'
+import SubViewError from '../error/sub-view'
 
 @connect(state => ({ appId: selectSelectedApplicationId(state) }))
 @withFeatureRequirement(mayViewApplicationEvents, {

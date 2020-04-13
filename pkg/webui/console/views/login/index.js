@@ -20,16 +20,18 @@ import { defineMessages } from 'react-intl'
 import { Redirect } from 'react-router-dom'
 import { Container, Row, Col } from 'react-grid-system'
 
+import Button from '../../../components/button'
+import Notification from '../../../components/notification'
+import ErrorNotification from '../../../components/error-notification'
+
+import IntlHelmet from '../../../lib/components/intl-helmet'
+import Message from '../../../lib/components/message'
+
 import PropTypes from '../../../lib/prop-types'
 import { selectApplicationSiteName, selectApplicationRootPath } from '../../../lib/selectors/env'
 import { getBackendErrorName } from '../../../lib/errors/utils'
-import Button from '../../../components/button'
-import IntlHelmet from '../../../lib/components/intl-helmet'
 import sharedMessages from '../../../lib/shared-messages'
-import Message from '../../../lib/components/message'
 
-import Notification from '../../../components/notification'
-import ErrorNotification from '../../../components/error-notification'
 import style from './login.styl'
 
 const m = defineMessages({

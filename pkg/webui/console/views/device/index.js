@@ -16,22 +16,21 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import sharedMessages from '../../../lib/shared-messages'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import EntityTitleSection from '../../components/entity-title-section'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import Tabs from '../../../components/tabs'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import withRequest from '../../../lib/components/with-request'
 import withEnv from '../../../lib/components/env'
 import NotFoundRoute from '../../../lib/components/not-found-route'
 
-import DeviceOverview from '../device-overview'
-import DeviceData from '../device-data'
-import DeviceGeneralSettings from '../device-general-settings'
-import DeviceLocation from '../device-location'
-import DevicePayloadFormatters from '../device-payload-formatters'
-import DeviceClaimAuthenticationCode from '../device-claim-authentication-code'
+import sharedMessages from '../../../lib/shared-messages'
+import { selectJsConfig, selectAsConfig } from '../../../lib/selectors/env'
+import { mayReadApplicationDeviceKeys } from '../../lib/feature-checks'
+import PropTypes from '../../../lib/prop-types'
+import getHostnameFromUrl from '../../../lib/host-from-url'
 
 import { getDevice, stopDeviceEventsStream } from '../../store/actions/devices'
 import { selectSelectedApplicationId } from '../../store/selectors/applications'
@@ -40,11 +39,13 @@ import {
   selectDeviceFetching,
   selectDeviceError,
 } from '../../store/selectors/devices'
-import { selectJsConfig, selectAsConfig } from '../../../lib/selectors/env'
 
-import { mayReadApplicationDeviceKeys } from '../../lib/feature-checks'
-import PropTypes from '../../../lib/prop-types'
-import getHostnameFromUrl from '../../../lib/host-from-url'
+import DeviceData from '../device-data'
+import DeviceGeneralSettings from '../device-general-settings'
+import DeviceLocation from '../device-location'
+import DevicePayloadFormatters from '../device-payload-formatters'
+import DeviceClaimAuthenticationCode from '../device-claim-authentication-code'
+import DeviceOverview from '../device-overview'
 
 import style from './device.styl'
 

@@ -16,26 +16,28 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import sharedMessages from '../../../lib/shared-messages'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import SideNavigation from '../../../components/navigation/side'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
+import Breadcrumbs from '../../../components/breadcrumbs'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import withRequest from '../../../lib/components/with-request'
 import { withEnv } from '../../../lib/components/env'
-import Breadcrumbs from '../../../components/breadcrumbs'
 import NotFoundRoute from '../../../lib/components/not-found-route'
 
-import ApplicationOverview from '../application-overview'
-import ApplicationGeneralSettings from '../application-general-settings'
-import ApplicationApiKeys from '../application-api-keys'
-import ApplicationLink from '../application-link'
-import ApplicationCollaborators from '../application-collaborators'
-import ApplicationData from '../application-data'
-import ApplicationPayloadFormatters from '../application-payload-formatters'
-import ApplicationIntegrationsWebhooks from '../application-integrations-webhooks'
-import ApplicationIntegrationsPubsubs from '../application-integrations-pubsubs'
-import ApplicationIntegrationsMqtt from '../application-integrations-mqtt'
+import sharedMessages from '../../../lib/shared-messages'
+import {
+  mayViewApplicationInfo,
+  mayViewApplicationEvents,
+  mayLinkApplication,
+  mayViewApplicationDevices,
+  mayCreateOrEditApplicationIntegrations,
+  mayEditBasicApplicationInfo,
+  mayViewOrEditApplicationApiKeys,
+  mayViewOrEditApplicationCollaborators,
+} from '../../lib/feature-checks'
+import PropTypes from '../../../lib/prop-types'
 
 import {
   getApplication,
@@ -50,19 +52,18 @@ import {
   selectApplicationRightsFetching,
   selectApplicationRightsError,
 } from '../../store/selectors/applications'
-import {
-  mayViewApplicationInfo,
-  mayViewApplicationEvents,
-  mayLinkApplication,
-  mayViewApplicationDevices,
-  mayCreateOrEditApplicationIntegrations,
-  mayEditBasicApplicationInfo,
-  mayViewOrEditApplicationApiKeys,
-  mayViewOrEditApplicationCollaborators,
-} from '../../lib/feature-checks'
 
+import ApplicationOverview from '../application-overview'
+import ApplicationGeneralSettings from '../application-general-settings'
+import ApplicationApiKeys from '../application-api-keys'
+import ApplicationLink from '../application-link'
+import ApplicationCollaborators from '../application-collaborators'
+import ApplicationData from '../application-data'
+import ApplicationPayloadFormatters from '../application-payload-formatters'
+import ApplicationIntegrationsWebhooks from '../application-integrations-webhooks'
+import ApplicationIntegrationsPubsubs from '../application-integrations-pubsubs'
+import ApplicationIntegrationsMqtt from '../application-integrations-mqtt'
 import Devices from '../devices'
-import PropTypes from '../../../lib/prop-types'
 
 @connect(
   function(state, props) {

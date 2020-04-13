@@ -18,18 +18,21 @@ import { Switch, Route } from 'react-router'
 
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import sharedMessages from '../../../lib/shared-messages'
+
 import ErrorView from '../../../lib/components/error-view'
 import NotFoundRoute from '../../../lib/components/not-found-route'
+import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
+import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
+import { mayViewOrEditOrganizationCollaborators } from '../../lib/feature-checks'
+
+import { selectSelectedOrganizationId } from '../../store/selectors/organizations'
+
 import SubViewError from '../error/sub-view'
 import OrganizationCollaboratorsList from '../organization-collaborators-list'
 import OrganizationCollaboratorAdd from '../organization-collaborator-add'
 import OrganizationCollaboratorEdit from '../organization-collaborator-edit'
-import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-
-import { mayViewOrEditOrganizationCollaborators } from '../../lib/feature-checks'
-import { selectSelectedOrganizationId } from '../../store/selectors/organizations'
 
 @connect(state => ({ orgId: selectSelectedOrganizationId(state) }))
 @withFeatureRequirement(mayViewOrEditOrganizationCollaborators, {

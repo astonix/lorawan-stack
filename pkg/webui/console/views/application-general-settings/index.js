@@ -24,28 +24,31 @@ import { bindActionCreators } from 'redux'
 import PageTitle from '../../../components/page-title'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
-import sharedMessages from '../../../lib/shared-messages'
-import Message from '../../../lib/components/message'
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import SubmitButton from '../../../components/submit-button'
 import ModalButton from '../../../components/button/modal-button'
-import diff from '../../../lib/diff'
 import toast from '../../../components/toast'
 import SubmitBar from '../../../components/submit-bar'
-import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-import Require from '../../lib/components/require'
 import KeyValueMap from '../../../components/key-value-map'
 
+import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+import Require from '../../lib/components/require'
+import Message from '../../../lib/components/message'
+
+import diff from '../../../lib/diff'
+import sharedMessages from '../../../lib/shared-messages'
 import { mayEditBasicApplicationInfo, mayDeleteApplication } from '../../lib/feature-checks'
+import PropTypes from '../../../lib/prop-types'
+import { id as idRegexp } from '../../../lib/regexp'
+
+import { attachPromise } from '../../store/actions/lib'
+import { updateApplication, deleteApplication } from '../../store/actions/applications'
 import {
   selectSelectedApplication,
   selectSelectedApplicationId,
 } from '../../store/selectors/applications'
-import { updateApplication, deleteApplication } from '../../store/actions/applications'
-import { attachPromise } from '../../store/actions/lib'
-import PropTypes from '../../../lib/prop-types'
-import { id as idRegexp } from '../../../lib/regexp'
+
 import { mapFormValuesToApplication, mapApplicationToFormValues } from './mapping'
 
 const m = defineMessages({

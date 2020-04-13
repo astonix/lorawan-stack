@@ -17,6 +17,7 @@ import { storiesOf } from '@storybook/react'
 import bind from 'autobind-decorator'
 
 import Button from '../button'
+
 import toast, { ToastContainer } from '.'
 
 const TOAST_TITLE = 'Toast title'

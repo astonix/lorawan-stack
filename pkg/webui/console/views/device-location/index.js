@@ -18,19 +18,19 @@ import { Col, Row, Container } from 'react-grid-system'
 import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
-import sharedMessages from '../../../lib/shared-messages'
-
 import LocationForm from '../../components/location-form'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { updateDevice } from '../../store/actions/devices'
 import { attachPromise } from '../../store/actions/lib'
 import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import { selectSelectedDevice, selectSelectedDeviceId } from '../../store/selectors/devices'
-
-import PropTypes from '../../../lib/prop-types'
 
 const m = defineMessages({
   setDeviceLocation: 'Set Device Location',

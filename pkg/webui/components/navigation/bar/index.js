@@ -15,10 +15,12 @@
 import React from 'react'
 import classnames from 'classnames'
 
-import NavigationLink from '../link'
 import Message from '../../../lib/components/message'
-import Icon from '../../icon'
+
 import PropTypes from '../../../lib/prop-types'
+
+import NavigationLink from '../link'
+import Icon from '../../icon'
 
 import style from './bar.styl'
 

@@ -16,9 +16,10 @@ import React from 'react'
 import { connect as storeConnect } from 'react-redux'
 import bind from 'autobind-decorator'
 
-import PropTypes from '../../../lib/prop-types'
 import Field from '../../../components/form/field'
 import Select from '../../../components/select'
+
+import PropTypes from '../../../lib/prop-types'
 
 const formatOptions = options =>
   Object.keys(options).map(key => ({ value: key, label: options[key] }))

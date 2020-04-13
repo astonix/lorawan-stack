@@ -22,18 +22,19 @@ import Form from '../../../components/form'
 import Input from '../../../components/input'
 import SubmitBar from '../../../components/submit-bar'
 import SubmitButton from '../../../components/submit-button'
-import IntlHelmet from '../../../lib/components/intl-helmet'
 import ModalButton from '../../../components/button/modal-button'
 import Notification from '../../../components/notification'
 import toast from '../../../components/toast'
+
+import IntlHelmet from '../../../lib/components/intl-helmet'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 
 import { updateDevice } from '../../store/actions/devices'
 import { attachPromise } from '../../store/actions/lib'
 import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import { selectSelectedDevice, selectSelectedDeviceId } from '../../store/selectors/devices'
-
-import sharedMessages from '../../../lib/shared-messages'
-import PropTypes from '../../../lib/prop-types'
 
 const m = defineMessages({
   deleteCode: 'Delete claim authentication code',

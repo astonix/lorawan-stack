@@ -17,16 +17,18 @@ import classnames from 'classnames'
 import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 
-import Icon from '../icon'
 import Message from '../../lib/components/message'
 import DateTime from '../../lib/components/date-time'
+
 import PropTypes from '../../lib/prop-types'
+
+import Icon from '../icon'
 import CodeEditor from '../code-editor'
+
 import CRUDEvent from './types/crud'
 import DefaultEvent from './types/default'
 import MessageEvent from './types/message'
 import ErrorEvent from './types/error'
-
 import style from './event.styl'
 
 const m = defineMessages({

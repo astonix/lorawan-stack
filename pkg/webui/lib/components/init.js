@@ -19,6 +19,7 @@ import { setConfiguration } from 'react-grid-system'
 import { defineMessages } from 'react-intl'
 
 import Spinner from '../../components/spinner'
+
 import ErrorMessage from './error-message'
 import Message from './message'
 

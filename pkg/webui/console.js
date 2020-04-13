@@ -18,10 +18,12 @@ import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux'
 import * as Sentry from '@sentry/browser'
 
-import { EnvProvider } from './lib/components/env'
 import { BreadcrumbsProvider } from './components/breadcrumbs/context'
+
+import { EnvProvider } from './lib/components/env'
 import Init from './lib/components/init'
 import WithLocale from './lib/components/with-locale'
+
 import env from './lib/env'
 import { selectApplicationRootPath } from './lib/selectors/env'
 import './lib/yup-extensions'

@@ -18,10 +18,12 @@ import bind from 'autobind-decorator'
 import { push } from 'connected-react-router'
 
 import Button from '../../../components/button'
+
 import WithAuth from '../../../lib/components/with-auth'
 
-import { logout } from '../../store/actions/user'
 import sharedMessages from '../../../lib/shared-messages'
+
+import { logout } from '../../store/actions/user'
 
 @connect(state => ({
   user: state.user.user,

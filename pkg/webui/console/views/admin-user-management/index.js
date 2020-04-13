@@ -18,14 +18,17 @@ import { Switch, Route } from 'react-router'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import Breadcrumbs from '../../../components/breadcrumbs'
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import NotFoundRoute from '../../../lib/components/not-found-route'
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
 import { mayManageUsers } from '../../lib/feature-checks'
+
 import UserEdit from '../admin-user-management-edit'
+
 import UserManagement from './admin-user-management'
 
 @withFeatureRequirement(mayManageUsers, { redirect: '/' })

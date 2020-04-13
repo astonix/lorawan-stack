@@ -17,11 +17,14 @@ import { defineMessages } from 'react-intl'
 
 import Tag from '../../../components/tag'
 import TagGroup from '../../../components/tag/group'
-import FetchTable from '../fetch-table'
-import PropTypes from '../../../lib/prop-types'
+
 import Message from '../../../lib/components/message'
 
+import PropTypes from '../../../lib/prop-types'
 import sharedMessages from '../../../lib/shared-messages'
+
+import FetchTable from '../fetch-table'
+
 import style from './api-keys-table.styl'
 
 const m = defineMessages({

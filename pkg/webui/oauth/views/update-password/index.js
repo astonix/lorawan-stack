@@ -23,18 +23,21 @@ import * as Yup from 'yup'
 import queryString from 'query-string'
 
 import api from '../../api'
-import sharedMessages from '../../../lib/shared-messages'
 
 import Button from '../../../components/button'
 import Form from '../../../components/form'
 import Input from '../../../components/input'
 import SubmitButton from '../../../components/submit-button'
-import IntlHelmet from '../../../lib/components/intl-helmet'
-import Message from '../../../lib/components/message'
-import style from '../create-account/create-account.styl'
 import Checkbox from '../../../components/checkbox'
 import Spinner from '../../../components/spinner'
+
+import Message from '../../../lib/components/message'
+import IntlHelmet from '../../../lib/components/intl-helmet'
+
+import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
+
+import style from '../create-account/create-account.styl'
 
 const m = defineMessages({
   newPassword: 'New Password',

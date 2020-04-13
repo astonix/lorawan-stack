@@ -16,19 +16,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { Switch, Route } from 'react-router'
 
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
-import ErrorView from '../../../lib/components/error-view'
-import SubViewError from '../error/sub-view'
-import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-import ApplicationApiKeysList from '../application-api-keys-list'
-import ApplicationApiKeyEdit from '../application-api-key-edit'
-import ApplicationApiKeyAdd from '../application-api-key-add'
 
+import ErrorView from '../../../lib/components/error-view'
+import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewOrEditApplicationApiKeys } from '../../lib/feature-checks'
-import { selectSelectedApplicationId } from '../../store/selectors/applications'
 import PropTypes from '../../../lib/prop-types'
+
+import { selectSelectedApplicationId } from '../../store/selectors/applications'
+
+import ApplicationApiKeysList from '../application-api-keys-list'
+import ApplicationApiKeyAdd from '../application-api-key-add'
+import SubViewError from '../error/sub-view'
+import ApplicationApiKeyEdit from '../application-api-key-edit'
 
 @connect(state => ({ appId: selectSelectedApplicationId(state) }))
 @withFeatureRequirement(mayViewOrEditApplicationApiKeys, {

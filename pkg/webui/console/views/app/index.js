@@ -18,16 +18,19 @@ import { ConnectedRouter } from 'connected-react-router'
 import { Route, Switch } from 'react-router-dom'
 import classnames from 'classnames'
 
+import { ToastContainer } from '../../../components/toast'
+import Footer from '../../../components/footer'
+
+import Header from '../../containers/header'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import { withEnv } from '../../../lib/components/env'
 import ErrorView from '../../../lib/components/error-view'
 import ScrollToTop from '../../../lib/components/scroll-to-top'
+
 import dev from '../../../lib/dev'
 import PropTypes from '../../../lib/prop-types'
-import { ToastContainer } from '../../../components/toast'
 
-import Header from '../../containers/header'
-import Footer from '../../../components/footer'
 import Landing from '../landing'
 import Login from '../login'
 import FullViewError from '../error'

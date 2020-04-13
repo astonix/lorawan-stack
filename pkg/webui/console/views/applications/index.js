@@ -15,17 +15,18 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import ApplicationAdd from '../application-add'
-import ApplicationsList from '../applications-list'
-import Application from '../application'
-
-import sharedMessages from '../../../lib/shared-messages'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import withFeatureRequirement from '../../lib/components/with-feature-requirement'
 
+import sharedMessages from '../../../lib/shared-messages'
 import { mayViewApplications } from '../../lib/feature-checks'
 import PropTypes from '../../../lib/prop-types'
+
+import Application from '../application'
+import ApplicationsList from '../applications-list'
+import ApplicationAdd from '../application-add'
 
 @withFeatureRequirement(mayViewApplications, { redirect: '/' })
 @withBreadcrumb('apps', function(props) {

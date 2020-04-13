@@ -12,8 +12,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { GET_DEV_BASE, GET_DEVICES_LIST_BASE } from '../actions/devices'
 import { combineDeviceIds, extractDeviceIdFromCombinedId } from '../../../lib/selectors/id'
+
+import { GET_DEV_BASE, GET_DEVICES_LIST_BASE } from '../actions/devices'
 
 import {
   createEventsSelector,
@@ -24,7 +25,6 @@ import {
   createPaginationIdsSelectorByEntity,
   createPaginationTotalCountSelectorByEntity,
 } from './pagination'
-
 import { createFetchingSelector } from './fetching'
 import { createErrorSelector } from './error'
 

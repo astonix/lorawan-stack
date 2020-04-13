@@ -15,9 +15,11 @@
 import React from 'react'
 
 import Message from '../../../../lib/components/message'
-import Event from '../..'
+
 import PropTypes from '../../../../lib/prop-types'
 import { getEntityId } from '../../../../lib/selectors/id'
+
+import Event from '../..'
 
 class DefaultEvent extends React.PureComponent {
   static propTypes = {

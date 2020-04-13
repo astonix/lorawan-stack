@@ -15,16 +15,20 @@
 import React from 'react'
 import bind from 'autobind-decorator'
 
-import ApiKeyModal from '../api-key-modal'
-import PropTypes from '../../../lib/prop-types'
-import sharedMessages from '../../../lib/shared-messages'
 import SubmitBar from '../../../components/submit-bar'
 import FormField from '../../../components/form/field'
 import FormSubmit from '../../../components/form/submit'
 import SubmitButton from '../../../components/submit-button'
 import Input from '../../../components/input'
+
 import Message from '../../../lib/components/message'
-import RightsGroup from '../../../console/components/rights-group'
+
+import sharedMessages from '../../../lib/shared-messages'
+import PropTypes from '../../../lib/prop-types'
+
+import ApiKeyModal from '../api-key-modal'
+import RightsGroup from '../rights-group'
+
 import ApiKeyForm from './form'
 import validationSchema from './validation-schema'
 

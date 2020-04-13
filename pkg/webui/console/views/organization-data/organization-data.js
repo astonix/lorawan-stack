@@ -19,6 +19,7 @@ import { Container, Col, Row } from 'react-grid-system'
 import PageTitle from '../../../components/page-title'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
+
 import OrganizationEvents from '../../containers/organization-events'
 
 import sharedMessages from '../../../lib/shared-messages'

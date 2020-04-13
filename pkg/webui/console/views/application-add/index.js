@@ -20,6 +20,8 @@ import bind from 'autobind-decorator'
 import { defineMessages } from 'react-intl'
 import { push } from 'connected-react-router'
 
+import api from '../../api'
+
 import PageTitle from '../../../components/page-title'
 import Form from '../../../components/form'
 import Input from '../../../components/input'
@@ -27,17 +29,18 @@ import Checkbox from '../../../components/checkbox'
 import SubmitButton from '../../../components/submit-button'
 import toast from '../../../components/toast'
 import SubmitBar from '../../../components/submit-bar'
+
+import OwnersSelect from '../../containers/owners-select'
+
+import withFeatureRequirement from '../../lib/components/with-feature-requirement'
+
 import PropTypes from '../../../lib/prop-types'
 import sharedMessages from '../../../lib/shared-messages'
 import { id as applicationIdRegexp, address } from '../../lib/regexp'
 import { getApplicationId } from '../../../lib/selectors/id'
-import OwnersSelect from '../../containers/owners-select'
-import withFeatureRequirement from '../../lib/components/with-feature-requirement'
-
-import { selectUserId, selectUserRights } from '../../store/selectors/user'
 import { mayCreateApplications, mayLinkApplication } from '../../lib/feature-checks'
 
-import api from '../../api'
+import { selectUserId, selectUserRights } from '../../store/selectors/user'
 
 const m = defineMessages({
   applicationName: 'Application Name',

@@ -19,6 +19,7 @@ import { defineMessages } from 'react-intl'
 import Button from '../../../../components/button'
 
 import Message from '../../../../lib/components/message'
+
 import PropTypes from '../../../../lib/prop-types'
 
 import style from './collapse.styl'

@@ -18,24 +18,26 @@ import { Switch, Route } from 'react-router'
 import { withBreadcrumb } from '../../../components/breadcrumbs/context'
 import Breadcrumb from '../../../components/breadcrumbs/breadcrumb'
 import Breadcrumbs from '../../../components/breadcrumbs'
+import SideNavigation from '../../../components/navigation/side'
+
 import IntlHelmet from '../../../lib/components/intl-helmet'
 import { withEnv } from '../../../lib/components/env'
-import SideNavigation from '../../../components/navigation/side'
+import NotFoundRoute from '../../../lib/components/not-found-route'
+
 import sharedMessages from '../../../lib/shared-messages'
 import PropTypes from '../../../lib/prop-types'
-import NotFoundRoute from '../../../lib/components/not-found-route'
-import OrganizationOverview from '../organization-overview'
-import OrganizationData from '../organization-data'
-import OrganizationGeneralSettings from '../organization-general-settings'
-import OrganizationApiKeys from '../organization-api-keys'
-import OrganizationCollaborators from '../organization-collaborators'
-
 import {
   mayViewOrganizationInformation,
   mayViewOrEditOrganizationApiKeys,
   mayViewOrEditOrganizationCollaborators,
   mayEditBasicOrganizationInformation,
 } from '../../lib/feature-checks'
+
+import OrganizationOverview from '../organization-overview'
+import OrganizationData from '../organization-data'
+import OrganizationGeneralSettings from '../organization-general-settings'
+import OrganizationApiKeys from '../organization-api-keys'
+import OrganizationCollaborators from '../organization-collaborators'
 
 @withEnv
 @withBreadcrumb('orgs.single', function(props) {
