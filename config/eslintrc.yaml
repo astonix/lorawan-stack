@@ -9,6 +9,7 @@ parser: babel-eslint
 plugins:
   - jsdoc
   - prettier
+  - import
 
 env:
   node: true
@@ -28,6 +29,54 @@ parserOptions:
 rules:
   prettier/prettier: error
 
+  # Enforce import order
+  import/order:
+    - error
+    - pathGroups:
+      - pattern: "{.,..,../..,../../..,../../../..}/**/messages"
+        group: parent
+      - pattern: "{.,..,../..,../../..,../../../..}/constants/**"
+        group: parent
+        position: before
+      - pattern: "{..,../..,../../..,../../../..}/api"
+        group: parent
+        position: before
+      - pattern: "{.,..,../..,../../..,../../../..}/components/**"
+        group: parent
+        position: before
+      - pattern: "{.,..,../..,../../..,../../../..}/containers/**"
+        group: parent
+        position: before
+      - pattern: "{.,..,../..,../../..,../../../..}/views/**"
+        group: parent
+        position: before
+      - pattern: "{.,..,../..,../../..,../../../..}/lib/components/**"
+        group: parent
+        position: before
+      - pattern: "{.,..,../..,../../..,../../../..}/lib/**"
+        group: parent
+        position: before
+      - pattern: "{.,..,../..,../../..,../../../..}/store/**"
+        group: parent
+        position: before
+      - pattern: "{.,..,../..,../../..,../../../..}/(assets|styles)/**"
+        group: index
+        position: before
+      - pattern: "../*"
+        group: parent
+      newlines-between: always
+
+  # Prevent superfluous path traversions in import statements
+  import/no-useless-path-segments:
+    - error
+    - noUselessIndex: true
+
+  # Warn when an exported module is unused
+  import/no-unused-modules: warn
+
+  # Enforce newlines after import statements
+  import/newline-after-import: error
+
   jest/no-large-snapshots:
     - warn
     - maxSize: 400
@@ -46,7 +95,7 @@ rules:
   # Enforce propTypes declarations alphabetical sorting
   react/sort-prop-types: warn
   # Prevent undefined components
-  react/jsx-no-undef: error
+  react/jsx-no-undef: warn
   # Prevent vague prop types
   react/forbid-prop-types:
     - warn
