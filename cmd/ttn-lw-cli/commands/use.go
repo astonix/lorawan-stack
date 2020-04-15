@@ -53,9 +53,13 @@ var (
 			destPath := func(base string, user bool, overwrite bool) (string, error) {
 				fileName := base
 				if user {
-					dir, err := os.UserConfigDir()
-					if err != nil {
-						return "", err
+					dir := os.Getenv("SNAP_USER_COMMON")
+					if dir == "" {
+						var err error
+						dir, err = os.UserConfigDir()
+						if err != nil {
+							return "", err
+						}
 					}
 					fileName = filepath.Join(dir, base)
 				}

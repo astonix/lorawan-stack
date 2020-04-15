@@ -53,6 +53,10 @@ func WithConfigFileFlag(flag string) Option {
 			paths = append(paths, path.Join(dir, dotfile))
 			envPaths = append(envPaths, path.Join(dir, dotfile))
 		}
+		if dir := os.Getenv("SNAP_USER_COMMON"); dir != "" {
+			paths = append(paths, path.Join(dir, dotfile))
+			envPaths = append(envPaths, path.Join(dir, dotfile))
+		}
 
 		m.defaultPaths = paths
 		m.viper.SetDefault(flag, paths)
